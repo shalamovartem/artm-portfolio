@@ -1,0 +1,4 @@
+import {promises as fs} from 'node:fs';
+import path from 'node:path';
+import {dataDir} from '../../../../lib/storage';
+export async function GET(request:Request){const key=new URL(request.url).pathname.split('/').pop()||'';if(!/^[a-f0-9-]{36}$/.test(key))return new Response(null,{status:404});try{const root=path.join(dataDir,'uploads');const meta=JSON.parse(await fs.readFile(path.join(root,key+'.json'),'utf8'));return new Response(await fs.readFile(path.join(root,key)),{headers:{'Content-Type':meta.type,'Cache-Control':'public,max-age=31536000,immutable','X-Content-Type-Options':'nosniff'}})}catch{return new Response(null,{status:404})}}

@@ -1,0 +1,389 @@
+[
+  {
+    "slug": "aglamp",
+    "title": "AGLamp",
+    "subtitle": "Свет, который можно настроить под настроение.",
+    "body": "Серия ламп-ночников с цветной светодиодной подсветкой и сенсорным управлением. Лёгкое касание меняет цвет: от ярких оттенков до спокойного лавандового света.\n\nПроект объединяет конструирование корпуса, электронику и прошивку. Для загрузки прошивки используется приложение AGWrite.",
+    "year": "",
+    "kind": "HARDWARE",
+    "image": "/media/lamp2.jpg",
+    "facts": [
+      {
+        "label": "Управление",
+        "url": "Сенсорная кнопка"
+      },
+      {
+        "label": "Свет",
+        "url": "Цветные светодиоды"
+      }
+    ],
+    "links": [
+      {
+        "label": "Программа AGWrite",
+        "url": "/projects/agwrite"
+      }
+    ],
+    "children": [
+      {
+        "title": "AGLamp 1",
+        "slug": "aglamp-1"
+      },
+      {
+        "title": "AGLamp 2",
+        "slug": "aglamp-2"
+      },
+      {
+        "title": "AGLamp 3",
+        "slug": "aglamp-3"
+      }
+    ],
+    "gallery": [],
+    "note": "",
+    "licenseText": ""
+  },
+  {
+    "slug": "aglamp-1",
+    "title": "AGLamp 1",
+    "subtitle": "Первая версия лампы-ночника.",
+    "body": "Лампа с 64 светодиодами и сенсорной кнопкой сверху. Поддерживает разные цвета и плавные переходы.\n\nЗаказы на эту версию больше не принимаются.",
+    "year": "2020",
+    "kind": "HARDWARE",
+    "image": "/media/lamp1.jpg",
+    "facts": [
+      {
+        "label": "Светодиоды",
+        "url": "64"
+      },
+      {
+        "label": "Управление",
+        "url": "Сенсорное"
+      }
+    ],
+    "links": [
+      {
+        "label": "Прошивка v1 · 23.12.2020",
+        "url": "https://yadi.sk/d/iDqUMbAxbm_bAg"
+      },
+      {
+        "label": "Прошивка v2_L1 · 19.02.2021",
+        "url": "https://disk.yandex.ru/d/ai2KnvHhfkeHHA"
+      },
+      {
+        "label": "Загрузчик AGWrite",
+        "url": "/projects/agwrite"
+      }
+    ],
+    "children": [],
+    "gallery": [
+      "/media/lamp1-front.png",
+      "/media/lamp1-back.png"
+    ],
+    "note": "",
+    "licenseText": ""
+  },
+  {
+    "slug": "aglamp-2",
+    "title": "AGLamp 2",
+    "subtitle": "Компактная форма. Много оттенков.",
+    "body": "Лампа-ночник с 20 светодиодами и сенсорной кнопкой в верхней части корпуса. Цвет освещения меняется касанием; плавные переходы помогают настроить свет под настроение.\n\nНа исходном сайте эта модель предлагалась под заказ. Актуальную возможность изготовления можно уточнить в контактах.",
+    "year": "2021",
+    "kind": "HARDWARE",
+    "image": "/media/lamp2.jpg",
+    "facts": [
+      {
+        "label": "Светодиоды",
+        "url": "20"
+      },
+      {
+        "label": "Управление",
+        "url": "Сенсорное"
+      }
+    ],
+    "links": [
+      {
+        "label": "Прошивка v1 · 23.12.2020",
+        "url": "https://yadi.sk/d/iDqUMbAxbm_bAg"
+      },
+      {
+        "label": "Загрузчик AGWrite",
+        "url": "/projects/agwrite"
+      },
+      {
+        "label": "Обсудить изготовление",
+        "url": "/?section=links"
+      }
+    ],
+    "children": [],
+    "gallery": [
+      "/media/lamp2-render.png",
+      "/media/lamp2-top.png",
+      "/media/lamp2-front.png",
+      "/media/lamp2-table.jpg"
+    ],
+    "note": "",
+    "licenseText": ""
+  },
+  {
+    "slug": "aglamp-3",
+    "title": "AGLamp 3",
+    "subtitle": "Третья версия серии.",
+    "body": "На исходном сайте страница этой версии отмечена как находящаяся в разработке. Характеристики, изображения и файлы для неё не опубликованы.",
+    "year": "2022",
+    "kind": "HARDWARE",
+    "image": "",
+    "facts": [],
+    "links": [
+      {
+        "label": "Другие лампы",
+        "url": "/projects/aglamp"
+      }
+    ],
+    "children": [],
+    "gallery": [],
+    "note": "Архивная страница · в разработке",
+    "licenseText": ""
+  },
+  {
+    "slug": "agbutton",
+    "title": "AGButton",
+    "subtitle": "Дополнительный блок клавиатуры.",
+    "body": "Аппаратный проект дополнительного блока клавиатуры. Приложение AGWrite предназначено в том числе для прошивки AGButton и других устройств на ATMega 328P.",
+    "year": "",
+    "kind": "HARDWARE",
+    "image": "/media/button.png",
+    "facts": [],
+    "links": [
+      {
+        "label": "Загрузчик прошивки",
+        "url": "/projects/agwrite"
+      }
+    ],
+    "children": [],
+    "gallery": [],
+    "note": "",
+    "licenseText": ""
+  },
+  {
+    "slug": "agwrite",
+    "title": "AGWrite",
+    "subtitle": "Немного кода, чтобы железо ожило.",
+    "body": "Приложение для загрузки прошивок в AGLamp, AGButton и другие устройства на микроконтроллере ATMega 328P.",
+    "year": "2021",
+    "kind": "SOFTWARE",
+    "image": "/media/agwrite.png",
+    "facts": [
+      {
+        "label": "Микроконтроллер",
+        "url": "ATMega 328P"
+      },
+      {
+        "label": "Назначение",
+        "url": "Загрузка прошивки"
+      }
+    ],
+    "links": [],
+    "children": [
+      {
+        "title": "AGWrite 1.3",
+        "slug": "agwrite-1-3"
+      },
+      {
+        "title": "AGWrite 2",
+        "slug": "agwrite-2"
+      }
+    ],
+    "gallery": [],
+    "note": "Архив проекта. На старом сайте раздел отмечен как незавершённый; доступные версии сохранены.",
+    "licenseText": ""
+  },
+  {
+    "slug": "agwrite-1-3",
+    "title": "AGWrite 1.3",
+    "subtitle": "Загрузчик прошивок для устройств.",
+    "body": "Изменения в версии 1.3:\n\n1. Исправлена страница «Работа с ПО».\n2. Добавлено уведомление о завершении загрузки.\n3. Добавлена проверка прав пользователя и перезапуск с правами администратора.\n4. Исходный код размещён на GitHub.",
+    "year": "13 июня 2021",
+    "kind": "SOFTWARE",
+    "image": "/media/agwrite.png",
+    "facts": [],
+    "links": [
+      {
+        "label": "Скачать AGWSetup.exe",
+        "url": "https://github.com/ArtemShalamov/AGWrite/releases/download/1.3/AGWSetup.exe"
+      },
+      {
+        "label": "Исходный код и релиз",
+        "url": "https://github.com/ArtemShalamov/AGWrite/releases/tag/1.3"
+      }
+    ],
+    "children": [],
+    "gallery": [],
+    "note": "",
+    "licenseText": ""
+  },
+  {
+    "slug": "agwrite-2",
+    "title": "AGWrite 2",
+    "subtitle": "Следующая версия загрузчика.",
+    "body": "На исходном сайте версия отмечена как находящаяся в разработке. Дата релиза и файл для скачивания не опубликованы.",
+    "year": "",
+    "kind": "SOFTWARE",
+    "image": "",
+    "facts": [],
+    "links": [
+      {
+        "label": "Доступная версия 1.3",
+        "url": "/projects/agwrite-1-3"
+      }
+    ],
+    "children": [],
+    "gallery": [],
+    "note": "Архивная страница · в разработке",
+    "licenseText": ""
+  },
+  {
+    "slug": "aglicense",
+    "title": "AGLicense",
+    "subtitle": "Лицензии для проектов.",
+    "body": "Сборник лицензий, которые можно использовать в своих проектах. Здесь есть собственная AGLicense F1, а также ссылки на MIT и GNU GPLv3.\n\nДля AGLicense F1 сохранены оригинальные тексты на русском и английском языках.",
+    "year": "2021",
+    "kind": "DOCUMENTS",
+    "image": "",
+    "facts": [],
+    "links": [
+      {
+        "label": "MIT License",
+        "url": "https://mit-license.org/"
+      },
+      {
+        "label": "GNU GPLv3",
+        "url": "https://www.gnu.org/licenses/gpl-3.0.html"
+      }
+    ],
+    "children": [
+      {
+        "title": "AGLicense F1",
+        "slug": "aglicense-f1"
+      }
+    ],
+    "gallery": [],
+    "note": "",
+    "licenseText": ""
+  },
+  {
+    "slug": "aglicense-f1",
+    "title": "AGLicense F1",
+    "subtitle": "Оригинальный текст лицензии.",
+    "body": "На исходной странице перечислены использование в личных целях, копирование, редактирование, слияние и распространение. Для продажи указано условие согласия владельца авторского права.\n\nЛицензия создана с использованием MIT License. Текст ниже перенесён без смысловых правок; русский и английский варианты сохранены.",
+    "year": "",
+    "kind": "DOCUMENTS",
+    "image": "",
+    "facts": [],
+    "links": [
+      {
+        "label": "Открыть текст без оформления",
+        "url": "/license/aglicense-f1.txt"
+      },
+      {
+        "label": "MIT License",
+        "url": "https://mit-license.org/"
+      }
+    ],
+    "children": [],
+    "gallery": [],
+    "note": "",
+    "licenseText": "en:\nThis license allows persons who have received a copy of the data files and\nrelated documentation (collectively \"Files\"), free of charge\nuse Files without restrictions, including the unlimited right to\nuse, copy, modify, merge, publish and distribute\ncopies of Files, as well as those who receive the Files at\nthe following terms and conditions:\n\nThe above copyright notice and these terms must be\nincluded in all copies or significant parts of these Files.\n\nTHESE FILES ARE PROVIDED \"AS IS\", WITHOUT ANY GUARANTEES, EXPLICITLY EXPRESSED\nOR IMPLIED, INCLUDING WARRANTIES OF MERCHANTABILITY, COMPLIANCE WITH ITS\nA SPECIFIC PURPOSE AND THE ABSENCE OF VIOLATIONS, BUT NOT LIMITED TO THEM. IN\nNO CASE, THE AUTHORS OR COPYRIGHT HOLDERS ARE NOT RESPONSIBLE FOR ANY\nCLAIMS, FOR DAMAGES OR FOR OTHER CLAIMS, INCLUDING WHEN THE CONTRACT IS VALID,\nA TORT OR OTHER SITUATION ARISING FROM THE USE OF FILES OR OTHER\nACTIONS WITH FILES.\n\n\n\nru:\nДанная лицензия разрешает лицам, получившим копию данных файлов и \nсопутствующей документации (в дальнейшем именуемыми «Файлы»), безвозмездно \nиспользовать Файлы без ограничений, включая неограниченное право на \nиспользование, копирование, изменение, слияние, публикацию и распространение \nкопий Файлов, а также лицам, которым предоставляется данные Файлы, при \nсоблюдении следующих условий:\n\nУказанное выше уведомление об авторском праве и данные условия должны быть \nвключены во все копии или значимые части данных Файлов.\n\nДАННЫЕ ФАЙЛЫ ПРЕДОСТАВЛЯЮТСЯ «КАК ЕСТЬ», БЕЗ КАКИХ-ЛИБО ГАРАНТИЙ, ЯВНО ВЫРАЖЕННЫХ \nИЛИ ПОДРАЗУМЕВАЕМЫХ, ВКЛЮЧАЯ ГАРАНТИИ ТОВАРНОЙ ПРИГОДНОСТИ, СООТВЕТСТВИЯ ПО ЕГО \nКОНКРЕТНОМУ НАЗНАЧЕНИЮ И ОТСУТСТВИЯ НАРУШЕНИЙ, НО НЕ ОГРАНИЧИВАЯСЬ ИМИ. НИ В \nКАКОМ СЛУЧАЕ АВТОРЫ ИЛИ ПРАВООБЛАДАТЕЛИ НЕ НЕСУТ ОТВЕТСТВЕННОСТИ ПО КАКИМ-ЛИБО \nИСКАМ, ЗА УЩЕРБ ИЛИ ПО ИНЫМ ТРЕБОВАНИЯМ, В ТОМ ЧИСЛЕ, ПРИ ДЕЙСТВИИ КОНТРАКТА, \nДЕЛИКТЕ ИЛИ ИНОЙ СИТУАЦИИ, ВОЗНИКШИМ ИЗ-ЗА ИСПОЛЬЗОВАНИЯ ФАЙЛОВ ИЛИ ИНЫХ \nДЕЙСТВИЙ С ФАЙЛАМИ.\n\n"
+  },
+  {
+    "slug": "sphinix",
+    "title": "Sphinix",
+    "subtitle": "Группа проектов и команда разработчиков.",
+    "body": "Sphinix объединяет разработку Minecraft-серверов, сервисов и работу команды SphinixDevelopersTeam. SphinixCloud создавался как облачное хранилище и единый центр аутентификации проектов.",
+    "year": "",
+    "kind": "DIGITAL",
+    "image": "/media/sphinix.png",
+    "facts": [],
+    "links": [
+      {
+        "label": "Команда разработчиков",
+        "url": "https://vk.com/sphdevteam"
+      }
+    ],
+    "children": [
+      {
+        "title": "SphinixServers",
+        "slug": "sphinixservers"
+      },
+      {
+        "title": "SphinixServices",
+        "slug": "sphinixservices"
+      },
+      {
+        "title": "SphinixCloud",
+        "slug": "sphinixcloud"
+      }
+    ],
+    "gallery": [],
+    "note": "",
+    "licenseText": ""
+  },
+  {
+    "slug": "sphinixservers",
+    "title": "SphinixServers",
+    "subtitle": "Разработка серверов Minecraft.",
+    "body": "Проект в составе группы Sphinix, специализирующийся на разработке Minecraft-серверов.",
+    "year": "",
+    "kind": "DIGITAL",
+    "image": "/media/sphinix.png",
+    "facts": [],
+    "links": [
+      {
+        "label": "Сообщество проекта",
+        "url": "https://vk.com/sphinixservers"
+      }
+    ],
+    "children": [],
+    "gallery": [],
+    "note": "",
+    "licenseText": ""
+  },
+  {
+    "slug": "sphinixservices",
+    "title": "SphinixServices",
+    "subtitle": "Сервисы для игровых серверов.",
+    "body": "Разработка сервисов для игровых серверов Minecraft и не только. Часть группы проектов Sphinix.",
+    "year": "",
+    "kind": "DIGITAL",
+    "image": "/media/sphinix.png",
+    "facts": [],
+    "links": [
+      {
+        "label": "Сообщество проекта",
+        "url": "https://vk.com/sphinixservices"
+      }
+    ],
+    "children": [],
+    "gallery": [],
+    "note": "",
+    "licenseText": ""
+  },
+  {
+    "slug": "sphinixcloud",
+    "title": "SphinixCloud",
+    "subtitle": "Облачное хранилище и единый вход.",
+    "body": "Облачное хранилище, которое также служило единым центром аутентификации проектов Sphinix.",
+    "year": "",
+    "kind": "DIGITAL",
+    "image": "/media/sphinix.png",
+    "facts": [],
+    "links": [
+      {
+        "label": "Сайт проекта",
+        "url": "https://sphinixcloud.ru"
+      }
+    ],
+    "children": [],
+    "gallery": [],
+    "note": "",
+    "licenseText": ""
+  }
+]

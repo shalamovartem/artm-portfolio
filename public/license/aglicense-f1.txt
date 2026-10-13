@@ -1,0 +1,40 @@
+en:
+This license allows persons who have received a copy of the data files and
+related documentation (collectively "Files"), free of charge
+use Files without restrictions, including the unlimited right to
+use, copy, modify, merge, publish and distribute
+copies of Files, as well as those who receive the Files at
+the following terms and conditions:
+
+The above copyright notice and these terms must be
+included in all copies or significant parts of these Files.
+
+THESE FILES ARE PROVIDED "AS IS", WITHOUT ANY GUARANTEES, EXPLICITLY EXPRESSED
+OR IMPLIED, INCLUDING WARRANTIES OF MERCHANTABILITY, COMPLIANCE WITH ITS
+A SPECIFIC PURPOSE AND THE ABSENCE OF VIOLATIONS, BUT NOT LIMITED TO THEM. IN
+NO CASE, THE AUTHORS OR COPYRIGHT HOLDERS ARE NOT RESPONSIBLE FOR ANY
+CLAIMS, FOR DAMAGES OR FOR OTHER CLAIMS, INCLUDING WHEN THE CONTRACT IS VALID,
+A TORT OR OTHER SITUATION ARISING FROM THE USE OF FILES OR OTHER
+ACTIONS WITH FILES.
+
+
+
+ru:
+Данная лицензия разрешает лицам, получившим копию данных файлов и 
+сопутствующей документации (в дальнейшем именуемыми «Файлы»), безвозмездно 
+использовать Файлы без ограничений, включая неограниченное право на 
+использование, копирование, изменение, слияние, публикацию и распространение 
+копий Файлов, а также лицам, которым предоставляется данные Файлы, при 
+соблюдении следующих условий:
+
+Указанное выше уведомление об авторском праве и данные условия должны быть 
+включены во все копии или значимые части данных Файлов.
+
+ДАННЫЕ ФАЙЛЫ ПРЕДОСТАВЛЯЮТСЯ «КАК ЕСТЬ», БЕЗ КАКИХ-ЛИБО ГАРАНТИЙ, ЯВНО ВЫРАЖЕННЫХ 
+ИЛИ ПОДРАЗУМЕВАЕМЫХ, ВКЛЮЧАЯ ГАРАНТИИ ТОВАРНОЙ ПРИГОДНОСТИ, СООТВЕТСТВИЯ ПО ЕГО 
+КОНКРЕТНОМУ НАЗНАЧЕНИЮ И ОТСУТСТВИЯ НАРУШЕНИЙ, НО НЕ ОГРАНИЧИВАЯСЬ ИМИ. НИ В 
+КАКОМ СЛУЧАЕ АВТОРЫ ИЛИ ПРАВООБЛАДАТЕЛИ НЕ НЕСУТ ОТВЕТСТВЕННОСТИ ПО КАКИМ-ЛИБО 
+ИСКАМ, ЗА УЩЕРБ ИЛИ ПО ИНЫМ ТРЕБОВАНИЯМ, В ТОМ ЧИСЛЕ, ПРИ ДЕЙСТВИИ КОНТРАКТА, 
+ДЕЛИКТЕ ИЛИ ИНОЙ СИТУАЦИИ, ВОЗНИКШИМ ИЗ-ЗА ИСПОЛЬЗОВАНИЯ ФАЙЛОВ ИЛИ ИНЫХ 
+ДЕЙСТВИЙ С ФАЙЛАМИ.
+

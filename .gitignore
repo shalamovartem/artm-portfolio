@@ -1,0 +1,16 @@
+node_modules/
+.next/
+out/
+dist/
+data/
+.env*
+!.env.example
+*.tsbuildinfo
+next-env.d.ts
+.DS_Store
+*.log
+*.zip
+*.pem
+.codex/
+.agents/
+.openai/

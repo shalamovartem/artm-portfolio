@@ -1,0 +1,1320 @@
+{
+  "name": "Артём Шаламов",
+  "handle": "shalamovartem",
+  "bio": "Инженер-конструктор. Директор по операционной деятельности RoboGrade. Проектирую устройства, работаю с электроникой и превращаю идеи в реальные вещи.",
+  "avatar": "/media/avatar.jpg",
+  "theme": "dark",
+  "accent": "#c8f1b0",
+  "cards": [
+    {
+      "id": "about",
+      "type": "text",
+      "title": "От идеи\nдо настоящей вещи.",
+      "text": "Конструирую, собираю, испытываю. CAD, электроника, робототехника — и немного кода, чтобы всё это ожило.",
+      "url": "",
+      "image": "",
+      "size": "wide",
+      "category": "home",
+      "tone": "sage",
+      "hidden": false,
+      "home": true,
+      "projectSlug": ""
+    },
+    {
+      "id": "portrait",
+      "type": "image",
+      "title": "Привет, это я 👋",
+      "text": "",
+      "url": "",
+      "image": "/media/banner.jpg",
+      "size": "tall",
+      "category": "home",
+      "tone": "neutral",
+      "hidden": false,
+      "home": true,
+      "projectSlug": ""
+    },
+    {
+      "id": "lamp",
+      "type": "project",
+      "title": "AGLamp",
+      "text": "Лампа-ночник. От модели до предмета.",
+      "url": "/projects/aglamp",
+      "image": "/media/lamp.png",
+      "size": "small",
+      "category": "projects",
+      "tone": "neutral",
+      "hidden": false,
+      "home": true,
+      "projectSlug": "aglamp"
+    },
+    {
+      "id": "cad",
+      "type": "text",
+      "title": "От идеи\nдо объёма.",
+      "text": "Fusion 360 · 2D / 3D · CAD",
+      "url": "",
+      "image": "",
+      "size": "small",
+      "category": "home",
+      "tone": "peach",
+      "hidden": false,
+      "home": true,
+      "projectSlug": ""
+    },
+    {
+      "id": "location",
+      "type": "map",
+      "title": "Новочеркасск",
+      "text": "Россия · UTC+3",
+      "url": "",
+      "image": "",
+      "size": "wide",
+      "category": "home",
+      "tone": "neutral",
+      "hidden": false,
+      "home": true,
+      "projectSlug": ""
+    },
+    {
+      "id": "telegram",
+      "type": "link",
+      "title": "Telegram",
+      "text": "Самый быстрый способ связаться",
+      "url": "https://t.me/shalamovartem",
+      "image": "",
+      "size": "small",
+      "category": "links",
+      "tone": "blue",
+      "hidden": false,
+      "home": true,
+      "projectSlug": ""
+    },
+    {
+      "id": "button",
+      "type": "project",
+      "title": "AGButton",
+      "text": "Дополнительный блок клавиатуры.",
+      "url": "/projects/agbutton",
+      "image": "/media/button.png",
+      "size": "small",
+      "category": "projects",
+      "tone": "neutral",
+      "hidden": false,
+      "home": true,
+      "projectSlug": "agbutton"
+    },
+    {
+      "id": "photo",
+      "type": "image",
+      "title": "Замечать красивое",
+      "text": "Мои фотографии",
+      "url": "",
+      "image": "/media/photo-22.webp",
+      "size": "small",
+      "category": "photos",
+      "tone": "neutral",
+      "hidden": false,
+      "home": true,
+      "projectSlug": ""
+    },
+    {
+      "id": "mail",
+      "type": "link",
+      "title": "Давайте создадим\nчто-нибудь.",
+      "text": "ag@shalamovartem.ru",
+      "url": "mailto:ag@shalamovartem.ru",
+      "image": "",
+      "size": "wide",
+      "category": "links",
+      "tone": "lilac",
+      "hidden": false,
+      "home": true,
+      "projectSlug": ""
+    },
+    {
+      "id": "write",
+      "type": "project",
+      "title": "AGWrite",
+      "text": "Приложение для загрузки прошивки в AGLamp на Arduino Nano.",
+      "url": "/projects/agwrite",
+      "image": "",
+      "size": "small",
+      "category": "projects",
+      "tone": "blue",
+      "hidden": false,
+      "home": true,
+      "projectSlug": "agwrite"
+    },
+    {
+      "id": "sphinix",
+      "type": "project",
+      "title": "Sphinix",
+      "text": "Серверы, сервисы и команда разработчиков.",
+      "url": "/projects/sphinix",
+      "image": "/media/sphinix.png",
+      "size": "wide",
+      "category": "projects",
+      "tone": "green",
+      "hidden": false,
+      "home": true,
+      "projectSlug": "sphinix"
+    },
+    {
+      "id": "github",
+      "type": "link",
+      "title": "GitHub",
+      "text": "Код и эксперименты",
+      "url": "https://github.com/ArtemShalamov",
+      "image": "",
+      "size": "small",
+      "category": "links",
+      "tone": "neutral",
+      "hidden": false,
+      "home": true,
+      "projectSlug": ""
+    },
+    {
+      "id": "license",
+      "type": "project",
+      "title": "AGLicense",
+      "text": "Сборник моих лицензий и не только.",
+      "url": "/projects/aglicense",
+      "image": "",
+      "size": "small",
+      "category": "projects",
+      "tone": "neutral",
+      "hidden": false,
+      "home": false,
+      "projectSlug": "aglicense"
+    },
+    {
+      "id": "cloud",
+      "type": "project",
+      "title": "SphinixCloud",
+      "text": "Облачное хранилище и единый центр аутентификации Sphinix.",
+      "url": "/projects/sphinixcloud",
+      "image": "",
+      "size": "small",
+      "category": "projects",
+      "tone": "green",
+      "hidden": false,
+      "home": false,
+      "projectSlug": "sphinixcloud"
+    },
+    {
+      "id": "servers",
+      "type": "project",
+      "title": "SphinixServers",
+      "text": "Разработка серверов Minecraft",
+      "url": "/projects/sphinixservers",
+      "image": "",
+      "size": "small",
+      "category": "projects",
+      "tone": "neutral",
+      "hidden": false,
+      "home": false,
+      "projectSlug": "sphinixservers"
+    },
+    {
+      "id": "services",
+      "type": "project",
+      "title": "SphinixServices",
+      "text": "Сервисы для игровых серверов и не только",
+      "url": "/projects/sphinixservices",
+      "image": "",
+      "size": "small",
+      "category": "projects",
+      "tone": "neutral",
+      "hidden": false,
+      "home": false,
+      "projectSlug": "sphinixservices"
+    },
+    {
+      "id": "vk",
+      "type": "link",
+      "title": "ВКонтакте",
+      "text": "@shalamovartem",
+      "url": "https://vk.com/shalamovartem",
+      "image": "",
+      "size": "small",
+      "category": "links",
+      "tone": "blue",
+      "hidden": false,
+      "home": false,
+      "projectSlug": ""
+    },
+    {
+      "id": "discord",
+      "type": "link",
+      "title": "Discord",
+      "text": "Давайте общаться",
+      "url": "https://discordapp.com/users/523391040191725579",
+      "image": "",
+      "size": "small",
+      "category": "links",
+      "tone": "lilac",
+      "hidden": false,
+      "home": false,
+      "projectSlug": ""
+    },
+    {
+      "id": "channel",
+      "type": "link",
+      "title": "Telegram-канал",
+      "text": "Больше фотографий и заметок",
+      "url": "https://t.me/+dZ9pWZG4H_RiNWIy",
+      "image": "",
+      "size": "small",
+      "category": "links",
+      "tone": "blue",
+      "hidden": false,
+      "home": false,
+      "projectSlug": ""
+    },
+    {
+      "id": "steam",
+      "type": "link",
+      "title": "Steam",
+      "text": "Вне рабочего режима",
+      "url": "https://steamcommunity.com/id/artemgamer_/",
+      "image": "",
+      "size": "small",
+      "category": "links",
+      "tone": "neutral",
+      "hidden": false,
+      "home": false,
+      "projectSlug": ""
+    },
+    {
+      "id": "gallery-8",
+      "type": "image",
+      "title": "Фото 8",
+      "text": "Авторская фотография Артёма Шаламова",
+      "url": "",
+      "image": "/media/photo-8.webp",
+      "size": "small",
+      "category": "photos",
+      "tone": "neutral",
+      "hidden": false,
+      "home": false,
+      "projectSlug": ""
+    },
+    {
+      "id": "gallery-9",
+      "type": "image",
+      "title": "Фото 9",
+      "text": "Авторская фотография Артёма Шаламова",
+      "url": "",
+      "image": "/media/photo-9.webp",
+      "size": "small",
+      "category": "photos",
+      "tone": "neutral",
+      "hidden": false,
+      "home": false,
+      "projectSlug": ""
+    },
+    {
+      "id": "gallery-10",
+      "type": "image",
+      "title": "Фото 10",
+      "text": "Авторская фотография Артёма Шаламова",
+      "url": "",
+      "image": "/media/photo-10.webp",
+      "size": "tall",
+      "category": "photos",
+      "tone": "neutral",
+      "hidden": false,
+      "home": false,
+      "projectSlug": ""
+    },
+    {
+      "id": "gallery-11",
+      "type": "image",
+      "title": "Фото 11",
+      "text": "Авторская фотография Артёма Шаламова",
+      "url": "",
+      "image": "/media/photo-11.webp",
+      "size": "small",
+      "category": "photos",
+      "tone": "neutral",
+      "hidden": false,
+      "home": false,
+      "projectSlug": ""
+    },
+    {
+      "id": "gallery-12",
+      "type": "image",
+      "title": "Фото 12",
+      "text": "Авторская фотография Артёма Шаламова",
+      "url": "",
+      "image": "/media/photo-12.webp",
+      "size": "small",
+      "category": "photos",
+      "tone": "neutral",
+      "hidden": false,
+      "home": false,
+      "projectSlug": ""
+    },
+    {
+      "id": "gallery-13",
+      "type": "image",
+      "title": "Фото 13",
+      "text": "Авторская фотография Артёма Шаламова",
+      "url": "",
+      "image": "/media/photo-13.webp",
+      "size": "small",
+      "category": "photos",
+      "tone": "neutral",
+      "hidden": false,
+      "home": false,
+      "projectSlug": ""
+    },
+    {
+      "id": "gallery-15",
+      "type": "image",
+      "title": "Фото 15",
+      "text": "Авторская фотография Артёма Шаламова",
+      "url": "",
+      "image": "/media/photo-15.webp",
+      "size": "tall",
+      "category": "photos",
+      "tone": "neutral",
+      "hidden": false,
+      "home": false,
+      "projectSlug": ""
+    },
+    {
+      "id": "gallery-16",
+      "type": "image",
+      "title": "Фото 16",
+      "text": "Авторская фотография Артёма Шаламова",
+      "url": "",
+      "image": "/media/photo-16.webp",
+      "size": "small",
+      "category": "photos",
+      "tone": "neutral",
+      "hidden": false,
+      "home": false,
+      "projectSlug": ""
+    },
+    {
+      "id": "gallery-17",
+      "type": "image",
+      "title": "Фото 17",
+      "text": "Авторская фотография Артёма Шаламова",
+      "url": "",
+      "image": "/media/photo-17.webp",
+      "size": "small",
+      "category": "photos",
+      "tone": "neutral",
+      "hidden": false,
+      "home": false,
+      "projectSlug": ""
+    },
+    {
+      "id": "gallery-19",
+      "type": "image",
+      "title": "Фото 19",
+      "text": "Авторская фотография Артёма Шаламова",
+      "url": "",
+      "image": "/media/photo-19.webp",
+      "size": "small",
+      "category": "photos",
+      "tone": "neutral",
+      "hidden": false,
+      "home": false,
+      "projectSlug": ""
+    },
+    {
+      "id": "gallery-20",
+      "type": "image",
+      "title": "Фото 20",
+      "text": "Авторская фотография Артёма Шаламова",
+      "url": "",
+      "image": "/media/photo-20.webp",
+      "size": "tall",
+      "category": "photos",
+      "tone": "neutral",
+      "hidden": false,
+      "home": false,
+      "projectSlug": ""
+    },
+    {
+      "id": "gallery-23",
+      "type": "image",
+      "title": "Фото 23",
+      "text": "Авторская фотография Артёма Шаламова",
+      "url": "",
+      "image": "/media/photo-23.webp",
+      "size": "small",
+      "category": "photos",
+      "tone": "neutral",
+      "hidden": false,
+      "home": false,
+      "projectSlug": ""
+    },
+    {
+      "id": "gallery-24",
+      "type": "image",
+      "title": "Фото 24",
+      "text": "Авторская фотография Артёма Шаламова",
+      "url": "",
+      "image": "/media/photo-24.webp",
+      "size": "small",
+      "category": "photos",
+      "tone": "neutral",
+      "hidden": false,
+      "home": false,
+      "projectSlug": ""
+    },
+    {
+      "id": "gallery-25",
+      "type": "image",
+      "title": "Фото 25",
+      "text": "Авторская фотография Артёма Шаламова",
+      "url": "",
+      "image": "/media/photo-25.webp",
+      "size": "tall",
+      "category": "photos",
+      "tone": "neutral",
+      "hidden": false,
+      "home": false,
+      "projectSlug": ""
+    },
+    {
+      "id": "gallery-26",
+      "type": "image",
+      "title": "Фото 26",
+      "text": "Авторская фотография Артёма Шаламова",
+      "url": "",
+      "image": "/media/photo-26.webp",
+      "size": "small",
+      "category": "photos",
+      "tone": "neutral",
+      "hidden": false,
+      "home": false,
+      "projectSlug": ""
+    },
+    {
+      "id": "gallery-27",
+      "type": "image",
+      "title": "Фото 27",
+      "text": "Авторская фотография Артёма Шаламова",
+      "url": "",
+      "image": "/media/photo-27.webp",
+      "size": "small",
+      "category": "photos",
+      "tone": "neutral",
+      "hidden": false,
+      "home": false,
+      "projectSlug": ""
+    },
+    {
+      "id": "gallery-28",
+      "type": "image",
+      "title": "Фото 28",
+      "text": "Авторская фотография Артёма Шаламова",
+      "url": "",
+      "image": "/media/photo-28.webp",
+      "size": "small",
+      "category": "photos",
+      "tone": "neutral",
+      "hidden": false,
+      "home": false,
+      "projectSlug": ""
+    },
+    {
+      "id": "gallery-31",
+      "type": "image",
+      "title": "Фото 31",
+      "text": "Авторская фотография Артёма Шаламова",
+      "url": "",
+      "image": "/media/photo-31.webp",
+      "size": "small",
+      "category": "photos",
+      "tone": "neutral",
+      "hidden": false,
+      "home": false,
+      "projectSlug": ""
+    },
+    {
+      "id": "gallery-32",
+      "type": "image",
+      "title": "Фото 32",
+      "text": "Авторская фотография Артёма Шаламова",
+      "url": "",
+      "image": "/media/photo-32.webp",
+      "size": "small",
+      "category": "photos",
+      "tone": "neutral",
+      "hidden": false,
+      "home": false,
+      "projectSlug": ""
+    },
+    {
+      "id": "gallery-33",
+      "type": "image",
+      "title": "Фото 33",
+      "text": "Авторская фотография Артёма Шаламова",
+      "url": "",
+      "image": "/media/photo-33.webp",
+      "size": "small",
+      "category": "photos",
+      "tone": "neutral",
+      "hidden": false,
+      "home": false,
+      "projectSlug": ""
+    },
+    {
+      "id": "gallery-34",
+      "type": "image",
+      "title": "Фото 34",
+      "text": "Авторская фотография Артёма Шаламова",
+      "url": "",
+      "image": "/media/photo-34.webp",
+      "size": "small",
+      "category": "photos",
+      "tone": "neutral",
+      "hidden": false,
+      "home": false,
+      "projectSlug": ""
+    },
+    {
+      "id": "gallery-35",
+      "type": "image",
+      "title": "Фото 35",
+      "text": "Авторская фотография Артёма Шаламова",
+      "url": "",
+      "image": "/media/photo-35.webp",
+      "size": "tall",
+      "category": "photos",
+      "tone": "neutral",
+      "hidden": false,
+      "home": false,
+      "projectSlug": ""
+    },
+    {
+      "id": "gallery-36",
+      "type": "image",
+      "title": "Фото 36",
+      "text": "Авторская фотография Артёма Шаламова",
+      "url": "",
+      "image": "/media/photo-36.webp",
+      "size": "small",
+      "category": "photos",
+      "tone": "neutral",
+      "hidden": false,
+      "home": false,
+      "projectSlug": ""
+    },
+    {
+      "id": "gallery-37",
+      "type": "image",
+      "title": "Фото 37",
+      "text": "Авторская фотография Артёма Шаламова",
+      "url": "",
+      "image": "/media/photo-37.webp",
+      "size": "small",
+      "category": "photos",
+      "tone": "neutral",
+      "hidden": false,
+      "home": false,
+      "projectSlug": ""
+    },
+    {
+      "id": "gallery-38",
+      "type": "image",
+      "title": "Фото 38",
+      "text": "Авторская фотография Артёма Шаламова",
+      "url": "",
+      "image": "/media/photo-38.webp",
+      "size": "small",
+      "category": "photos",
+      "tone": "neutral",
+      "hidden": false,
+      "home": false,
+      "projectSlug": ""
+    },
+    {
+      "id": "gallery-39",
+      "type": "image",
+      "title": "Фото 39",
+      "text": "Авторская фотография Артёма Шаламова",
+      "url": "",
+      "image": "/media/photo-39.webp",
+      "size": "small",
+      "category": "photos",
+      "tone": "neutral",
+      "hidden": false,
+      "home": false,
+      "projectSlug": ""
+    },
+    {
+      "id": "gallery-40",
+      "type": "image",
+      "title": "Фото 40",
+      "text": "Авторская фотография Артёма Шаламова",
+      "url": "",
+      "image": "/media/photo-40.webp",
+      "size": "tall",
+      "category": "photos",
+      "tone": "neutral",
+      "hidden": false,
+      "home": false,
+      "projectSlug": ""
+    },
+    {
+      "id": "gallery-41",
+      "type": "image",
+      "title": "Фото 41",
+      "text": "Авторская фотография Артёма Шаламова",
+      "url": "",
+      "image": "/media/photo-41.webp",
+      "size": "small",
+      "category": "photos",
+      "tone": "neutral",
+      "hidden": false,
+      "home": false,
+      "projectSlug": ""
+    },
+    {
+      "id": "gallery-42",
+      "type": "image",
+      "title": "Фото 42",
+      "text": "Авторская фотография Артёма Шаламова",
+      "url": "",
+      "image": "/media/photo-42.webp",
+      "size": "small",
+      "category": "photos",
+      "tone": "neutral",
+      "hidden": false,
+      "home": false,
+      "projectSlug": ""
+    },
+    {
+      "id": "gallery-43",
+      "type": "image",
+      "title": "Фото 43",
+      "text": "Авторская фотография Артёма Шаламова",
+      "url": "",
+      "image": "/media/photo-43.webp",
+      "size": "small",
+      "category": "photos",
+      "tone": "neutral",
+      "hidden": false,
+      "home": false,
+      "projectSlug": ""
+    },
+    {
+      "id": "gallery-44",
+      "type": "image",
+      "title": "Фото 44",
+      "text": "Авторская фотография Артёма Шаламова",
+      "url": "",
+      "image": "/media/photo-44.webp",
+      "size": "small",
+      "category": "photos",
+      "tone": "neutral",
+      "hidden": false,
+      "home": false,
+      "projectSlug": ""
+    },
+    {
+      "id": "gallery-45",
+      "type": "image",
+      "title": "Фото 45",
+      "text": "Авторская фотография Артёма Шаламова",
+      "url": "",
+      "image": "/media/photo-45.webp",
+      "size": "tall",
+      "category": "photos",
+      "tone": "neutral",
+      "hidden": false,
+      "home": false,
+      "projectSlug": ""
+    },
+    {
+      "id": "gallery-46",
+      "type": "image",
+      "title": "Фото 46",
+      "text": "Авторская фотография Артёма Шаламова",
+      "url": "",
+      "image": "/media/photo-46.webp",
+      "size": "small",
+      "category": "photos",
+      "tone": "neutral",
+      "hidden": false,
+      "home": false,
+      "projectSlug": ""
+    },
+    {
+      "id": "gallery-47",
+      "type": "image",
+      "title": "Фото 47",
+      "text": "Авторская фотография Артёма Шаламова",
+      "url": "",
+      "image": "/media/photo-47.webp",
+      "size": "small",
+      "category": "photos",
+      "tone": "neutral",
+      "hidden": false,
+      "home": false,
+      "projectSlug": ""
+    },
+    {
+      "id": "gallery-48",
+      "type": "image",
+      "title": "Фото 48",
+      "text": "Авторская фотография Артёма Шаламова",
+      "url": "",
+      "image": "/media/photo-48.webp",
+      "size": "small",
+      "category": "photos",
+      "tone": "neutral",
+      "hidden": false,
+      "home": false,
+      "projectSlug": ""
+    },
+    {
+      "id": "gallery-49",
+      "type": "image",
+      "title": "Фото 49",
+      "text": "Авторская фотография Артёма Шаламова",
+      "url": "",
+      "image": "/media/photo-49.webp",
+      "size": "small",
+      "category": "photos",
+      "tone": "neutral",
+      "hidden": false,
+      "home": false,
+      "projectSlug": ""
+    },
+    {
+      "id": "pixel",
+      "type": "image",
+      "title": "Hello everybody)",
+      "text": "",
+      "url": "",
+      "image": "/media/photo-5.webp",
+      "size": "small",
+      "category": "photos",
+      "tone": "neutral",
+      "hidden": false,
+      "home": false,
+      "projectSlug": ""
+    },
+    {
+      "id": "card-1770423092420-4e2mkxy0",
+      "type": "text",
+      "title": "ЮРГПУ (НПИ)",
+      "text": "2024–2028 · Бакалавриат\nПриборостроение",
+      "url": "",
+      "image": "",
+      "size": "wide",
+      "category": "education",
+      "tone": "neutral",
+      "hidden": false,
+      "home": false,
+      "projectSlug": ""
+    },
+    {
+      "id": "card-1770423092420-4e2mkxy1",
+      "type": "text",
+      "title": "ЮРГПУ (НПИ)",
+      "text": "2025\nМонтажник радиоэлектронной аппаратуры и приборов 3-го разряда",
+      "url": "",
+      "image": "",
+      "size": "wide",
+      "category": "education",
+      "tone": "neutral",
+      "hidden": false,
+      "home": false,
+      "projectSlug": ""
+    },
+    {
+      "id": "card-1770423092420-4e2mkxy2",
+      "type": "text",
+      "title": "Орловский государственный университет",
+      "text": "2025\nОператор беспилотных авиационных систем",
+      "url": "",
+      "image": "",
+      "size": "wide",
+      "category": "education",
+      "tone": "neutral",
+      "hidden": false,
+      "home": false,
+      "projectSlug": ""
+    },
+    {
+      "id": "card-1770422862255-yp283as0",
+      "type": "text",
+      "title": "ЦНТТ RoboGrade",
+      "text": "Директор по операционной деятельности",
+      "url": "",
+      "image": "",
+      "size": "wide",
+      "category": "career",
+      "tone": "neutral",
+      "hidden": false,
+      "home": false,
+      "projectSlug": ""
+    },
+    {
+      "id": "card-1770422862255-yp283as1",
+      "type": "text",
+      "title": "Millida Client",
+      "text": "2023–2024\nРуководитель проекта",
+      "url": "",
+      "image": "",
+      "size": "wide",
+      "category": "career",
+      "tone": "neutral",
+      "hidden": false,
+      "home": false,
+      "projectSlug": ""
+    },
+    {
+      "id": "card-1770422862255-yp283as2",
+      "type": "text",
+      "title": "ВКонтакте",
+      "text": "С 2021 года\nУчастник команды VK Testers",
+      "url": "",
+      "image": "",
+      "size": "wide",
+      "category": "career",
+      "tone": "neutral",
+      "hidden": false,
+      "home": false,
+      "projectSlug": ""
+    },
+    {
+      "id": "card-1770422862255-yp283as3",
+      "type": "text",
+      "title": "SphinixDevelopersTeam",
+      "text": "С 2021 года\nРуководитель команды",
+      "url": "",
+      "image": "",
+      "size": "wide",
+      "category": "career",
+      "tone": "neutral",
+      "hidden": false,
+      "home": false,
+      "projectSlug": ""
+    }
+  ],
+  "sections": [
+    {
+      "id": "projects",
+      "title": "Проекты"
+    },
+    {
+      "id": "photos",
+      "title": "Фотографии"
+    },
+    {
+      "id": "career",
+      "title": "Карьера"
+    },
+    {
+      "id": "education",
+      "title": "Образование"
+    },
+    {
+      "id": "links",
+      "title": "Контакты"
+    }
+  ],
+  "projects": [
+    {
+      "slug": "aglamp",
+      "title": "AGLamp",
+      "subtitle": "Свет, который можно настроить под настроение.",
+      "body": "Серия ламп-ночников с цветной светодиодной подсветкой и сенсорным управлением. Лёгкое касание меняет цвет: от ярких оттенков до спокойного лавандового света.\n\nПроект объединяет конструирование корпуса, электронику и прошивку. Для загрузки прошивки используется приложение AGWrite.",
+      "year": "",
+      "kind": "HARDWARE",
+      "image": "/media/lamp2.jpg",
+      "facts": [
+        {
+          "label": "Управление",
+          "url": "Сенсорная кнопка"
+        },
+        {
+          "label": "Свет",
+          "url": "Цветные светодиоды"
+        }
+      ],
+      "links": [
+        {
+          "label": "Программа AGWrite",
+          "url": "/projects/agwrite"
+        }
+      ],
+      "children": [
+        {
+          "title": "AGLamp 1",
+          "slug": "aglamp-1"
+        },
+        {
+          "title": "AGLamp 2",
+          "slug": "aglamp-2"
+        },
+        {
+          "title": "AGLamp 3",
+          "slug": "aglamp-3"
+        }
+      ],
+      "gallery": [],
+      "note": "",
+      "licenseText": ""
+    },
+    {
+      "slug": "aglamp-1",
+      "title": "AGLamp 1",
+      "subtitle": "Первая версия лампы-ночника.",
+      "body": "Лампа с 64 светодиодами и сенсорной кнопкой сверху. Поддерживает разные цвета и плавные переходы.\n\nЗаказы на эту версию больше не принимаются.",
+      "year": "2020",
+      "kind": "HARDWARE",
+      "image": "/media/lamp1.jpg",
+      "facts": [
+        {
+          "label": "Светодиоды",
+          "url": "64"
+        },
+        {
+          "label": "Управление",
+          "url": "Сенсорное"
+        }
+      ],
+      "links": [
+        {
+          "label": "Прошивка v1 · 23.12.2020",
+          "url": "https://yadi.sk/d/iDqUMbAxbm_bAg"
+        },
+        {
+          "label": "Прошивка v2_L1 · 19.02.2021",
+          "url": "https://disk.yandex.ru/d/ai2KnvHhfkeHHA"
+        },
+        {
+          "label": "Загрузчик AGWrite",
+          "url": "/projects/agwrite"
+        }
+      ],
+      "children": [],
+      "gallery": [
+        "/media/lamp1-front.png",
+        "/media/lamp1-back.png"
+      ],
+      "note": "",
+      "licenseText": ""
+    },
+    {
+      "slug": "aglamp-2",
+      "title": "AGLamp 2",
+      "subtitle": "Компактная форма. Много оттенков.",
+      "body": "Лампа-ночник с 20 светодиодами и сенсорной кнопкой в верхней части корпуса. Цвет освещения меняется касанием; плавные переходы помогают настроить свет под настроение.\n\nНа исходном сайте эта модель предлагалась под заказ. Актуальную возможность изготовления можно уточнить в контактах.",
+      "year": "2021",
+      "kind": "HARDWARE",
+      "image": "/media/lamp2.jpg",
+      "facts": [
+        {
+          "label": "Светодиоды",
+          "url": "20"
+        },
+        {
+          "label": "Управление",
+          "url": "Сенсорное"
+        }
+      ],
+      "links": [
+        {
+          "label": "Прошивка v1 · 23.12.2020",
+          "url": "https://yadi.sk/d/iDqUMbAxbm_bAg"
+        },
+        {
+          "label": "Загрузчик AGWrite",
+          "url": "/projects/agwrite"
+        },
+        {
+          "label": "Обсудить изготовление",
+          "url": "/?section=links"
+        }
+      ],
+      "children": [],
+      "gallery": [
+        "/media/lamp2-render.png",
+        "/media/lamp2-top.png",
+        "/media/lamp2-front.png",
+        "/media/lamp2-table.jpg"
+      ],
+      "note": "",
+      "licenseText": ""
+    },
+    {
+      "slug": "aglamp-3",
+      "title": "AGLamp 3",
+      "subtitle": "Третья версия серии.",
+      "body": "На исходном сайте страница этой версии отмечена как находящаяся в разработке. Характеристики, изображения и файлы для неё не опубликованы.",
+      "year": "2022",
+      "kind": "HARDWARE",
+      "image": "",
+      "facts": [],
+      "links": [
+        {
+          "label": "Другие лампы",
+          "url": "/projects/aglamp"
+        }
+      ],
+      "children": [],
+      "gallery": [],
+      "note": "Архивная страница · в разработке",
+      "licenseText": ""
+    },
+    {
+      "slug": "agbutton",
+      "title": "AGButton",
+      "subtitle": "Дополнительный блок клавиатуры.",
+      "body": "Аппаратный проект дополнительного блока клавиатуры. Приложение AGWrite предназначено в том числе для прошивки AGButton и других устройств на ATMega 328P.",
+      "year": "",
+      "kind": "HARDWARE",
+      "image": "/media/button.png",
+      "facts": [],
+      "links": [
+        {
+          "label": "Загрузчик прошивки",
+          "url": "/projects/agwrite"
+        }
+      ],
+      "children": [],
+      "gallery": [],
+      "note": "",
+      "licenseText": ""
+    },
+    {
+      "slug": "agwrite",
+      "title": "AGWrite",
+      "subtitle": "Немного кода, чтобы железо ожило.",
+      "body": "Приложение для загрузки прошивок в AGLamp, AGButton и другие устройства на микроконтроллере ATMega 328P.",
+      "year": "2021",
+      "kind": "SOFTWARE",
+      "image": "/media/agwrite.png",
+      "facts": [
+        {
+          "label": "Микроконтроллер",
+          "url": "ATMega 328P"
+        },
+        {
+          "label": "Назначение",
+          "url": "Загрузка прошивки"
+        }
+      ],
+      "links": [],
+      "children": [
+        {
+          "title": "AGWrite 1.3",
+          "slug": "agwrite-1-3"
+        },
+        {
+          "title": "AGWrite 2",
+          "slug": "agwrite-2"
+        }
+      ],
+      "gallery": [],
+      "note": "Архив проекта. На старом сайте раздел отмечен как незавершённый; доступные версии сохранены.",
+      "licenseText": ""
+    },
+    {
+      "slug": "agwrite-1-3",
+      "title": "AGWrite 1.3",
+      "subtitle": "Загрузчик прошивок для устройств.",
+      "body": "Изменения в версии 1.3:\n\n1. Исправлена страница «Работа с ПО».\n2. Добавлено уведомление о завершении загрузки.\n3. Добавлена проверка прав пользователя и перезапуск с правами администратора.\n4. Исходный код размещён на GitHub.",
+      "year": "13 июня 2021",
+      "kind": "SOFTWARE",
+      "image": "/media/agwrite.png",
+      "facts": [],
+      "links": [
+        {
+          "label": "Скачать AGWSetup.exe",
+          "url": "https://github.com/ArtemShalamov/AGWrite/releases/download/1.3/AGWSetup.exe"
+        },
+        {
+          "label": "Исходный код и релиз",
+          "url": "https://github.com/ArtemShalamov/AGWrite/releases/tag/1.3"
+        }
+      ],
+      "children": [],
+      "gallery": [],
+      "note": "",
+      "licenseText": ""
+    },
+    {
+      "slug": "agwrite-2",
+      "title": "AGWrite 2",
+      "subtitle": "Следующая версия загрузчика.",
+      "body": "На исходном сайте версия отмечена как находящаяся в разработке. Дата релиза и файл для скачивания не опубликованы.",
+      "year": "",
+      "kind": "SOFTWARE",
+      "image": "",
+      "facts": [],
+      "links": [
+        {
+          "label": "Доступная версия 1.3",
+          "url": "/projects/agwrite-1-3"
+        }
+      ],
+      "children": [],
+      "gallery": [],
+      "note": "Архивная страница · в разработке",
+      "licenseText": ""
+    },
+    {
+      "slug": "aglicense",
+      "title": "AGLicense",
+      "subtitle": "Лицензии для проектов.",
+      "body": "Сборник лицензий, которые можно использовать в своих проектах. Здесь есть собственная AGLicense F1, а также ссылки на MIT и GNU GPLv3.\n\nДля AGLicense F1 сохранены оригинальные тексты на русском и английском языках.",
+      "year": "2021",
+      "kind": "DOCUMENTS",
+      "image": "",
+      "facts": [],
+      "links": [
+        {
+          "label": "MIT License",
+          "url": "https://mit-license.org/"
+        },
+        {
+          "label": "GNU GPLv3",
+          "url": "https://www.gnu.org/licenses/gpl-3.0.html"
+        }
+      ],
+      "children": [
+        {
+          "title": "AGLicense F1",
+          "slug": "aglicense-f1"
+        }
+      ],
+      "gallery": [],
+      "note": "",
+      "licenseText": ""
+    },
+    {
+      "slug": "aglicense-f1",
+      "title": "AGLicense F1",
+      "subtitle": "Оригинальный текст лицензии.",
+      "body": "На исходной странице перечислены использование в личных целях, копирование, редактирование, слияние и распространение. Для продажи указано условие согласия владельца авторского права.\n\nЛицензия создана с использованием MIT License. Текст ниже перенесён без смысловых правок; русский и английский варианты сохранены.",
+      "year": "",
+      "kind": "DOCUMENTS",
+      "image": "",
+      "facts": [],
+      "links": [
+        {
+          "label": "Открыть текст без оформления",
+          "url": "/license/aglicense-f1.txt"
+        },
+        {
+          "label": "MIT License",
+          "url": "https://mit-license.org/"
+        }
+      ],
+      "children": [],
+      "gallery": [],
+      "note": "",
+      "licenseText": "en:\nThis license allows persons who have received a copy of the data files and\nrelated documentation (collectively \"Files\"), free of charge\nuse Files without restrictions, including the unlimited right to\nuse, copy, modify, merge, publish and distribute\ncopies of Files, as well as those who receive the Files at\nthe following terms and conditions:\n\nThe above copyright notice and these terms must be\nincluded in all copies or significant parts of these Files.\n\nTHESE FILES ARE PROVIDED \"AS IS\", WITHOUT ANY GUARANTEES, EXPLICITLY EXPRESSED\nOR IMPLIED, INCLUDING WARRANTIES OF MERCHANTABILITY, COMPLIANCE WITH ITS\nA SPECIFIC PURPOSE AND THE ABSENCE OF VIOLATIONS, BUT NOT LIMITED TO THEM. IN\nNO CASE, THE AUTHORS OR COPYRIGHT HOLDERS ARE NOT RESPONSIBLE FOR ANY\nCLAIMS, FOR DAMAGES OR FOR OTHER CLAIMS, INCLUDING WHEN THE CONTRACT IS VALID,\nA TORT OR OTHER SITUATION ARISING FROM THE USE OF FILES OR OTHER\nACTIONS WITH FILES.\n\n\n\nru:\nДанная лицензия разрешает лицам, получившим копию данных файлов и \nсопутствующей документации (в дальнейшем именуемыми «Файлы»), безвозмездно \nиспользовать Файлы без ограничений, включая неограниченное право на \nиспользование, копирование, изменение, слияние, публикацию и распространение \nкопий Файлов, а также лицам, которым предоставляется данные Файлы, при \nсоблюдении следующих условий:\n\nУказанное выше уведомление об авторском праве и данные условия должны быть \nвключены во все копии или значимые части данных Файлов.\n\nДАННЫЕ ФАЙЛЫ ПРЕДОСТАВЛЯЮТСЯ «КАК ЕСТЬ», БЕЗ КАКИХ-ЛИБО ГАРАНТИЙ, ЯВНО ВЫРАЖЕННЫХ \nИЛИ ПОДРАЗУМЕВАЕМЫХ, ВКЛЮЧАЯ ГАРАНТИИ ТОВАРНОЙ ПРИГОДНОСТИ, СООТВЕТСТВИЯ ПО ЕГО \nКОНКРЕТНОМУ НАЗНАЧЕНИЮ И ОТСУТСТВИЯ НАРУШЕНИЙ, НО НЕ ОГРАНИЧИВАЯСЬ ИМИ. НИ В \nКАКОМ СЛУЧАЕ АВТОРЫ ИЛИ ПРАВООБЛАДАТЕЛИ НЕ НЕСУТ ОТВЕТСТВЕННОСТИ ПО КАКИМ-ЛИБО \nИСКАМ, ЗА УЩЕРБ ИЛИ ПО ИНЫМ ТРЕБОВАНИЯМ, В ТОМ ЧИСЛЕ, ПРИ ДЕЙСТВИИ КОНТРАКТА, \nДЕЛИКТЕ ИЛИ ИНОЙ СИТУАЦИИ, ВОЗНИКШИМ ИЗ-ЗА ИСПОЛЬЗОВАНИЯ ФАЙЛОВ ИЛИ ИНЫХ \nДЕЙСТВИЙ С ФАЙЛАМИ.\n\n"
+    },
+    {
+      "slug": "sphinix",
+      "title": "Sphinix",
+      "subtitle": "Группа проектов и команда разработчиков.",
+      "body": "Sphinix объединяет разработку Minecraft-серверов, сервисов и работу команды SphinixDevelopersTeam. SphinixCloud создавался как облачное хранилище и единый центр аутентификации проектов.",
+      "year": "",
+      "kind": "DIGITAL",
+      "image": "/media/sphinix.png",
+      "facts": [],
+      "links": [
+        {
+          "label": "Команда разработчиков",
+          "url": "https://vk.com/sphdevteam"
+        }
+      ],
+      "children": [
+        {
+          "title": "SphinixServers",
+          "slug": "sphinixservers"
+        },
+        {
+          "title": "SphinixServices",
+          "slug": "sphinixservices"
+        },
+        {
+          "title": "SphinixCloud",
+          "slug": "sphinixcloud"
+        }
+      ],
+      "gallery": [],
+      "note": "",
+      "licenseText": ""
+    },
+    {
+      "slug": "sphinixservers",
+      "title": "SphinixServers",
+      "subtitle": "Разработка серверов Minecraft.",
+      "body": "Проект в составе группы Sphinix, специализирующийся на разработке Minecraft-серверов.",
+      "year": "",
+      "kind": "DIGITAL",
+      "image": "/media/sphinix.png",
+      "facts": [],
+      "links": [
+        {
+          "label": "Сообщество проекта",
+          "url": "https://vk.com/sphinixservers"
+        }
+      ],
+      "children": [],
+      "gallery": [],
+      "note": "",
+      "licenseText": ""
+    },
+    {
+      "slug": "sphinixservices",
+      "title": "SphinixServices",
+      "subtitle": "Сервисы для игровых серверов.",
+      "body": "Разработка сервисов для игровых серверов Minecraft и не только. Часть группы проектов Sphinix.",
+      "year": "",
+      "kind": "DIGITAL",
+      "image": "/media/sphinix.png",
+      "facts": [],
+      "links": [
+        {
+          "label": "Сообщество проекта",
+          "url": "https://vk.com/sphinixservices"
+        }
+      ],
+      "children": [],
+      "gallery": [],
+      "note": "",
+      "licenseText": ""
+    },
+    {
+      "slug": "sphinixcloud",
+      "title": "SphinixCloud",
+      "subtitle": "Облачное хранилище и единый вход.",
+      "body": "Облачное хранилище, которое также служило единым центром аутентификации проектов Sphinix.",
+      "year": "",
+      "kind": "DIGITAL",
+      "image": "/media/sphinix.png",
+      "facts": [],
+      "links": [
+        {
+          "label": "Сайт проекта",
+          "url": "https://sphinixcloud.ru"
+        }
+      ],
+      "children": [],
+      "gallery": [],
+      "note": "",
+      "licenseText": ""
+    }
+  ],
+  "greeting": "ПРИВЕТ, Я АРТЁМ",
+  "logo": "/media/ag-logo.png",
+  "favicon": "/media/ag-logo.png"
+}

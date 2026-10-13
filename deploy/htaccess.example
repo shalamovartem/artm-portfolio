@@ -1,0 +1,6 @@
+PassengerStartupFile server.cjs
+PassengerResolveSymlinksInDocumentRoot on
+Require all granted
+PassengerAppType node
+PassengerAppRoot /home/LOGIN/apps/artem-portfolio
+Options -MultiViews
