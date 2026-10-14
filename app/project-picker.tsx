@@ -1,9 +1,172 @@
-'use client';
-import {useState} from 'react';
-import {projectSchema,pagePath,reservedSlugs,type Document} from '../lib/document';
-export default function ProjectPicker({doc,onOpen,onClose,busy,onDelete}:{doc:Document;onOpen:(slug:string,next?:Document)=>Promise<void>;onClose:()=>void;busy:boolean;onDelete:(slug:string)=>void}){
- const [title,setTitle]=useState(''),[slug,setSlug]=useState(''),[kind,setKind]=useState<'standard'|'html'>('standard');
- const [location,setLocation]=useState<'projects'|'root'>('projects');
- const valid=!(location==='root'&&reservedSlugs.includes(slug))&&!!title.trim()&&/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(slug)&&slug.length<=100&&!doc.projects.some(p=>p.slug===slug);
- return <div className="modal-backdrop project-picker-backdrop" onClick={onClose}><section role="dialog" aria-modal="true" aria-label="Страницы сайта" className="dialog project-picker" onClick={e=>e.stopPropagation()}><button className="close" aria-label="Закрыть выбор страниц" onClick={onClose}>×</button><h2>Страницы сайта</h2><p>Выберите страницу — редактор откроется прямо на ней.</p><div className="project-picker-list">{doc.projects.map(p=><div className="project-picker-row" key={p.slug}><button disabled={busy} key={p.slug} onClick={()=>onOpen(p.slug)}><span>{p.title}<small>{pagePath(p)}</small></span><span>↗</span></button><button className="danger" aria-label={'Удалить страницу '+p.title} disabled={busy} onClick={()=>{if(window.confirm('Удалить страницу «'+p.title+'» и ссылки на неё? Изменение вступит в силу после публикации.'))onDelete(p.slug)}}>×</button></div>)}</div><h3>Новая страница</h3><div className="fields"><label>Название новой страницы<input value={title} maxLength={200} onChange={e=>setTitle(e.target.value)}/></label><label>Расположение<select value={location} onChange={e=>setLocation(e.target.value as typeof location)}><option value="projects">В проектах · /projects/адрес</option><option value="root">В корне · /адрес</option></select></label><label>Адрес страницы<input value={slug} placeholder="my-project" maxLength={100} onChange={e=>setSlug(e.target.value.toLowerCase().trim().replace(/^\/projects\//,''))}/><small>{location==='root'?'/':'/projects/'}{slug||'my-project'} · латинские буквы, цифры и дефисы</small></label><label>Тип страницы<select value={kind} onChange={e=>setKind(e.target.value as typeof kind)}><option value="standard">Типовая страница</option><option value="html">HTML-код</option></select></label>{slug&&!valid&&<p className="hint">Укажите название и уникальный адрес латиницей.</p>}<button className="primary" disabled={!valid||busy||doc.projects.length>=100} onClick={()=>{const p=projectSchema.parse({slug,location,title:title.trim(),pageType:kind,subtitle:'',body:'',year:'',kind:'PROJECT',image:'',facts:[],links:[],children:[],gallery:[],note:'',licenseText:''});void onOpen(slug,{...doc,projects:[...doc.projects,p]})}}>Создать и открыть редактор</button></div><p className="hint">Текущие изменения сохранятся в черновик перед переходом.</p></section></div>
+"use client";
+import { useState } from "react";
+import {
+  projectSchema,
+  pagePath,
+  reservedSlugs,
+  type Document,
+} from "../lib/document";
+export default function ProjectPicker({
+  doc,
+  onOpen,
+  onClose,
+  busy,
+  onDelete,
+}: {
+  doc: Document;
+  onOpen: (slug: string, next?: Document) => Promise<void>;
+  onClose: () => void;
+  busy: boolean;
+  onDelete: (slug: string) => void;
+}) {
+  const [title, setTitle] = useState(""),
+    [slug, setSlug] = useState(""),
+    [kind, setKind] = useState<"standard" | "html">("standard");
+  const [location, setLocation] = useState<"projects" | "root">("projects");
+  const valid =
+    !(location === "root" && reservedSlugs.includes(slug)) &&
+    !!title.trim() &&
+    /^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(slug) &&
+    slug.length <= 100 &&
+    !doc.projects.some((p) => p.slug === slug);
+  return (
+    <div className="modal-backdrop project-picker-backdrop" onClick={onClose}>
+      <section
+        role="dialog"
+        aria-modal="true"
+        aria-label="Страницы сайта"
+        className="dialog project-picker"
+        onClick={(e) => e.stopPropagation()}
+      >
+        <button
+          className="close"
+          aria-label="Закрыть выбор страниц"
+          onClick={onClose}
+        >
+          ×
+        </button>
+        <h2>Страницы сайта</h2>
+        <p>Выберите страницу — редактор откроется прямо на ней.</p>
+        <div className="project-picker-list">
+          {doc.projects.map((p) => (
+            <div className="project-picker-row" key={p.slug}>
+              <button
+                disabled={busy}
+                key={p.slug}
+                onClick={() => onOpen(p.slug)}
+              >
+                <span>
+                  {p.title}
+                  <small>{pagePath(p)}</small>
+                </span>
+                <span>↗</span>
+              </button>
+              <button
+                className="danger"
+                aria-label={"Удалить страницу " + p.title}
+                disabled={busy}
+                onClick={() => {
+                  if (
+                    window.confirm(
+                      "Удалить страницу «" +
+                        p.title +
+                        "» и ссылки на неё? Изменение вступит в силу после публикации.",
+                    )
+                  )
+                    onDelete(p.slug);
+                }}
+              >
+                ×
+              </button>
+            </div>
+          ))}
+        </div>
+        <h3>Новая страница</h3>
+        <div className="fields">
+          <label>
+            Название новой страницы
+            <input
+              value={title}
+              maxLength={200}
+              onChange={(e) => setTitle(e.target.value)}
+            />
+          </label>
+          <label>
+            Расположение
+            <select
+              value={location}
+              onChange={(e) => setLocation(e.target.value as typeof location)}
+            >
+              <option value="projects">В проектах · /projects/адрес</option>
+              <option value="root">В корне · /адрес</option>
+            </select>
+          </label>
+          <label>
+            Адрес страницы
+            <input
+              value={slug}
+              placeholder="my-project"
+              maxLength={100}
+              onChange={(e) =>
+                setSlug(
+                  e.target.value
+                    .toLowerCase()
+                    .trim()
+                    .replace(/^\/projects\//, ""),
+                )
+              }
+            />
+            <small>
+              {location === "root" ? "/" : "/projects/"}
+              {slug || "my-project"} · латинские буквы, цифры и дефисы
+            </small>
+          </label>
+          <label>
+            Тип страницы
+            <select
+              value={kind}
+              onChange={(e) => setKind(e.target.value as typeof kind)}
+            >
+              <option value="standard">Типовая страница</option>
+              <option value="html">HTML-код</option>
+            </select>
+          </label>
+          {slug && !valid && (
+            <p className="hint">
+              Укажите название и уникальный адрес латиницей.
+            </p>
+          )}
+          <button
+            className="primary"
+            disabled={!valid || busy || doc.projects.length >= 100}
+            onClick={() => {
+              const p = projectSchema.parse({
+                slug,
+                location,
+                title: title.trim(),
+                pageType: kind,
+                subtitle: "",
+                body: "",
+                year: "",
+                kind: "PROJECT",
+                image: "",
+                facts: [],
+                links: [],
+                children: [],
+                gallery: [],
+                note: "",
+                licenseText: "",
+              });
+              void onOpen(slug, { ...doc, projects: [...doc.projects, p] });
+            }}
+          >
+            Создать и открыть редактор
+          </button>
+        </div>
+        <p className="hint">
+          Текущие изменения сохранятся в черновик перед переходом.
+        </p>
+      </section>
+    </div>
+  );
 }

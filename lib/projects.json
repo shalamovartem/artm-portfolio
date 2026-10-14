@@ -74,10 +74,7 @@
       }
     ],
     "children": [],
-    "gallery": [
-      "/media/lamp1-front.png",
-      "/media/lamp1-back.png"
-    ],
+    "gallery": ["/media/lamp1-front.png", "/media/lamp1-back.png"],
     "note": "",
     "licenseText": ""
   },

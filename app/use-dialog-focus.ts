@@ -1,3 +1,34 @@
-'use client';
-import {useEffect} from 'react';
-export function useDialogFocus(active:boolean,selector:string){useEffect(()=>{if(!active)return;const previous=document.activeElement as HTMLElement|null;const dialog=document.querySelector<HTMLElement>(selector);const nodes=()=>Array.from(dialog?.querySelectorAll<HTMLElement>('button:not([disabled]),input,textarea,select,a[href],[contenteditable="true"]')||[]);nodes()[0]?.focus();const trap=(e:KeyboardEvent)=>{if(e.key!=='Tab')return;const n=nodes();if(!n.length)return;const i=n.indexOf(document.activeElement as HTMLElement);if(e.shiftKey&&i<=0){e.preventDefault();n[n.length-1].focus()}else if(!e.shiftKey&&(i===n.length-1||i<0)){e.preventDefault();n[0].focus()}};document.addEventListener('keydown',trap);return()=>{document.removeEventListener('keydown',trap);previous?.focus()}},[active,selector])}
+"use client";
+import { useEffect } from "react";
+export function useDialogFocus(active: boolean, selector: string) {
+  useEffect(() => {
+    if (!active) return;
+    const previous = document.activeElement as HTMLElement | null;
+    const dialog = document.querySelector<HTMLElement>(selector);
+    const nodes = () =>
+      Array.from(
+        dialog?.querySelectorAll<HTMLElement>(
+          'button:not([disabled]),input,textarea,select,a[href],[contenteditable="true"]',
+        ) || [],
+      );
+    nodes()[0]?.focus();
+    const trap = (e: KeyboardEvent) => {
+      if (e.key !== "Tab") return;
+      const n = nodes();
+      if (!n.length) return;
+      const i = n.indexOf(document.activeElement as HTMLElement);
+      if (e.shiftKey && i <= 0) {
+        e.preventDefault();
+        n[n.length - 1].focus();
+      } else if (!e.shiftKey && (i === n.length - 1 || i < 0)) {
+        e.preventDefault();
+        n[0].focus();
+      }
+    };
+    document.addEventListener("keydown", trap);
+    return () => {
+      document.removeEventListener("keydown", trap);
+      previous?.focus();
+    };
+  }, [active, selector]);
+}

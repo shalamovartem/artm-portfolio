@@ -1,28 +1,478 @@
-'use client';
-import {useState,useEffect} from 'react';
-import {LoginDialog} from '../../login-form';
-import DevicePreview,{usePreviewDocument} from '../../device-preview';
-import {linkProps} from '../../../lib/links';
-import {useEditorLayout} from '../../use-editor-layout';
-import {Markdown} from '../../markdown';
-import ProjectEditor from '../../project-editor';
-import {normalizeDocument,pagePath,type Document} from '../../../lib/document';
-import {ArrowLeft,ArrowUpRight,Sun,Moon,Download,X} from 'lucide-react';
-import type {Project} from '../../../lib/document';
-export default function ProjectView({project:publishedProject,theme:initialTheme,accent,name,logo,favicon,footerText,copyrightText,pagePaths}:{project:Project;theme:string;accent:string;name:string;logo:string;favicon:string;footerText:string;copyrightText:string;pagePaths:Record<string,string>}){
- const [login,setLogin]=useState(false),[phone,setPhone]=useState(false),[preview,setPreview]=useState(false);useEffect(()=>setPreview(new URLSearchParams(location.search).has('preview')&&window.parent!==window),[]);
- const [theme,setTheme]=useState(initialTheme),[photo,setPhoto]=useState<string|null>(null);
- const [doc,setDoc]=useState<Document|null>(null),[revision,setRevision]=useState(0),[editing,setEditing]=useState(false),[busy,setBusy]=useState(false),[dirty,setDirty]=useState(false),[status,setStatus]=useState(''),[published,setPublished]=useState(publishedProject);
- useEffect(()=>{document.querySelectorAll<HTMLLinkElement>('link[rel="icon"]').forEach(el=>el.href=favicon)},[favicon]);
- usePreviewDocument(setDoc);
- const editorStyle=useEditorLayout(editing);
- const p=(editing||preview)?doc?.projects.find(v=>v.slug===publishedProject.slug)||published:published;
- useEffect(()=>{document.title=p.browserTitle||`${p.title} — ${name}`},[p.browserTitle,p.title,name]);
- useEffect(()=>{const guard=(e:BeforeUnloadEvent)=>{if(dirty){e.preventDefault();e.returnValue=''}};window.addEventListener('beforeunload',guard);return()=>window.removeEventListener('beforeunload',guard)},[dirty]);
- async function startEdit(){setBusy(true);try{const r=await fetch('/api/document?draft=1');if(r.status===401){setLogin(true);return}if(!r.ok)throw Error('Не удалось открыть редактор');const d=await r.json() as {document:Document;revision:number};setDoc(normalizeDocument(d.document));setRevision(d.revision);setEditing(true);setDirty(false);setStatus('')}catch(e){setStatus(e instanceof Error?e.message:'Ошибка')}finally{setBusy(false)}}
- useEffect(()=>{if(!new URLSearchParams(location.search).has('preview')&&new URLSearchParams(window.location.search).has('edit')){void startEdit();/* Keep edit=1 so a draft-only page survives refresh. */}},[]);
- async function save(action:'draft'|'publish'){if(!doc)return;setBusy(true);try{const r=await fetch('/api/document',{method:'PUT',headers:{'Content-Type':'application/json'},body:JSON.stringify({document:doc,revision,action})});const d=await r.json() as {revision:number;error?:string};if(!r.ok)throw Error(d.error||'Не удалось сохранить');setRevision(d.revision);setDirty(false);if(action==='publish')setPublished(p);setStatus(action==='publish'?'Проект опубликован':'Черновик сохранён')}catch(e){setStatus(e instanceof Error?e.message:'Ошибка сохранения')}finally{setBusy(false)}}
- async function removePage(){if(!doc||!window.confirm('Удалить эту страницу из черновика? Опубликуйте изменения на главной, чтобы убрать её с сайта.'))return;setBusy(true);try{const slug=p.slug;const next={...doc,projects:doc.projects.filter(q=>q.slug!==slug).map(q=>({...q,children:q.children.filter(c=>c.slug!==slug)})),cards:doc.cards.map(c=>({...c,projectSlug:c.projectSlug===slug?'':c.projectSlug,url:c.url===pagePath(p)?'':c.url}))};const r=await fetch('/api/document',{method:'PUT',headers:{'Content-Type':'application/json'},body:JSON.stringify({document:next,revision,action:'draft'})});const data=await r.json();if(!r.ok)throw Error(data.error);setDirty(false);window.setTimeout(()=>window.location.assign('/?editProjects=1'),0)}catch(e){setStatus(e instanceof Error?e.message:'Не удалось удалить');setBusy(false)}}
- function close(){if(dirty&&!window.confirm('Закрыть редактор без сохранения изменений?'))return;setEditing(false);setDirty(false);setPhone(false)}
- return <div className={`site ${theme} project-site ${p.pageType==='html'?'html-site':''} ${editing?'project-editing':''} ${preview?'is-preview':''} ${phone?'device-mode':''}`} style={{...editorStyle,'--accent':accent,'--shell-background':p.shellBackground,'--shell-color':p.shellColor,'--footer-background':p.footerBackground,'--footer-color':p.footerColor} as React.CSSProperties}><div className="ambient-background" aria-hidden="true"><i/><i/><i/></div><header className="topbar"><a href="/" className="wordmark" aria-label="На главную"><img className="ag-logo" src={logo} alt="AG"/></a><span className="top-label">{p.pageType==='html'?p.title:'ИНЖЕНЕРИЯ / ПРОЕКТЫ'}</span><div className="top-actions"><button className="icon-btn" aria-label="Сменить тему" onClick={()=>setTheme(theme==='dark'?'light':'dark')}>{theme==='dark'?<Sun size={18}/>:<Moon size={18}/>}</button><button className="edit-button" disabled={busy} onClick={editing?close:startEdit}>{editing?'Закрыть редактор':'Редактировать'}</button><a href="/?section=links" className="edit-button">На связи <ArrowUpRight size={15}/></a></div></header>{editing&&doc&&<aside className="project-page-editor"><div className="project-editor-actions"><button className="editor-close" disabled={busy} onClick={close}><X size={15}/> Выйти из редактора</button><button onClick={()=>setPhone(!phone)}>{phone?'Компьютер':'Мобильный экран'}</button><strong>{dirty?'Есть изменения':'Редактор проекта'}</strong><button disabled={busy} onClick={()=>save('draft')}>Сохранить</button><button className="primary" disabled={busy} onClick={()=>save('publish')}>Опубликовать</button></div><p role="status">{status}</p><fieldset disabled={busy}><ProjectEditor initialSlug={publishedProject.slug} doc={doc} onChange={d=>{setDoc(d);setDirty(true)}}/></fieldset><button className="danger delete-project" disabled={busy} onClick={removePage}>Удалить страницу</button><button className="logout-button" onClick={async()=>{if(dirty&&!window.confirm('Выйти без сохранения?'))return;await fetch('/api/auth',{method:'DELETE'});setDirty(false);setEditing(false);location.assign('/')}}>Выйти из аккаунта</button></aside>}{!editing&&status&&<p role="status">{status}</p>}<main hidden={phone&&editing} className="project-main">{p.pageType!=='html'&&<a className="back-link" href="/?section=projects"><ArrowLeft size={16}/> Все проекты</a>}{p.pageType==='html'?<section className="html-project"><iframe title={p.title} sandbox="allow-scripts" referrerPolicy="no-referrer" srcDoc={p.html}/></section>:<><section className={`project-hero ${p.image?'':'without-image'}`}><div><div className="eyebrow">{p.kind}{p.year&&' / '+p.year}</div><h1>{p.title}</h1><p>{p.subtitle}</p><div className="project-actions">{p.links.slice(0,1).map((l,i)=><a className="primary" {...linkProps(l.url)} key={i} >{l.label}{/Скачать|Прошивка/.test(l.label)?<Download size={16}/>:<ArrowUpRight size={16}/>}</a>)}</div></div>{p.image&&<div className={`project-cover ${p.kind==='SOFTWARE'?'software-cover':''}`}><img src={p.image} alt={p.title}/><span>{p.kind==='HARDWARE'?'DESIGNED TO BE REAL':p.kind}</span></div>}</section><div className="project-body-grid"><article className="project-story"><span className="eyebrow">О ПРОЕКТЕ</span><Markdown value={p.body}/>{p.note&&<div className="project-note">{p.note}</div>}</article>{(p.facts.length>0||p.links.length>0)&&<aside className="project-details">{p.facts.length>0&&<><h2>Детали</h2><dl>{p.facts.map((f,i)=><div key={i}><dt>{f.label}</dt><dd>{f.url}</dd></div>)}</dl></>}{p.links.length>0&&<><h2>Ссылки и файлы</h2>{p.links.map((l,i)=><a key={i} {...linkProps(l.url)} >{l.label}<ArrowUpRight size={16}/></a>)}</>}</aside>}</div>{p.children.length>0&&<section className="project-versions"><div className="section-title-line"><h2>{p.versionsTitle}</h2><span>{String(p.children.length).padStart(2,'0')}</span></div><div className="version-grid">{p.children.map((c,i)=><a key={c.slug} href={doc?.projects.find(p=>p.slug===c.slug)?pagePath(doc.projects.find(p=>p.slug===c.slug)!):pagePaths[c.slug]||'/projects/'+c.slug}><span>0{i+1}</span><h3>{c.title}</h3><ArrowUpRight/></a>)}</div></section>}{p.gallery.length>0&&<section className="project-gallery"><div className="section-title-line"><h2>Форма и детали</h2><span>GALLERY</span></div><div>{p.gallery.map((src,i)=><button key={src} onClick={()=>setPhoto(src)} aria-label={`Открыть фото ${i+1}`}><img src={src} alt={`${p.title} — вид ${i+1}`} loading="lazy"/></button>)}</div></section>}{p.licenseText&&<section className="license-text"><h2>Текст лицензии</h2><pre>{p.licenseText}</pre></section>}</>}{p.pageType!=='html'&&<section className="project-contact"><span>ЕСТЬ ИДЕЯ?</span><a href="/?section=links">Давайте соберём<br/>что-нибудь интересное.<ArrowUpRight/></a></section>}<footer><span>© {new Date().getFullYear()} {copyrightText}</span><span>{footerText}</span><a href="/?section=projects">К проектам ↑</a></footer></main>{phone&&editing&&doc&&<DevicePreview doc={doc} path={pagePath(p)+'?edit=1'}/>} {login&&<LoginDialog onClose={()=>setLogin(false)} onSuccess={async()=>{setLogin(false);await startEdit()}}/>}{photo&&<div className="lightbox" role="dialog" aria-modal="true" aria-label="Фотография проекта" onClick={()=>setPhoto(null)}><button autoFocus className="close" aria-label="Закрыть" onClick={()=>setPhoto(null)} onKeyDown={e=>{if(e.key==='Escape')setPhoto(null)}}><X/></button><img src={photo} alt={p.title}/></div>}</div>
+"use client";
+import { useState, useEffect } from "react";
+import { useTheme } from "../../use-theme";
+import { LoginDialog } from "../../login-form";
+import DevicePreview, { usePreviewDocument } from "../../device-preview";
+import { linkProps } from "../../../lib/links";
+import { useEditorLayout } from "../../use-editor-layout";
+import { Markdown } from "../../markdown";
+import ProjectEditor from "../../project-editor";
+import {
+  normalizeDocument,
+  pagePath,
+  type Document,
+} from "../../../lib/document";
+import { ArrowLeft, ArrowUpRight, Sun, Moon, Download, X } from "lucide-react";
+import type { Project } from "../../../lib/document";
+export default function ProjectView({
+  project: publishedProject,
+  theme: initialTheme,
+  accent,
+  name,
+  logo,
+  favicon,
+  footerText,
+  copyrightText,
+  pagePaths,
+}: {
+  project: Project;
+  theme: string;
+  accent: string;
+  name: string;
+  logo: string;
+  favicon: string;
+  footerText: string;
+  copyrightText: string;
+  pagePaths: Record<string, string>;
+}) {
+  const [login, setLogin] = useState(false),
+    [phone, setPhone] = useState(false),
+    [preview, setPreview] = useState(false);
+  useEffect(
+    () =>
+      setPreview(
+        new URLSearchParams(location.search).has("preview") &&
+          window.parent !== window,
+      ),
+    [],
+  );
+  const [theme, setTheme] = useTheme(initialTheme as "dark" | "light"),
+    [photo, setPhoto] = useState<string | null>(null);
+  const [doc, setDoc] = useState<Document | null>(null),
+    [revision, setRevision] = useState(0),
+    [editing, setEditing] = useState(false),
+    [busy, setBusy] = useState(false),
+    [dirty, setDirty] = useState(false),
+    [status, setStatus] = useState(""),
+    [published, setPublished] = useState(publishedProject);
+  useEffect(() => {
+    document
+      .querySelectorAll<HTMLLinkElement>('link[rel="icon"]')
+      .forEach((el) => (el.href = favicon));
+  }, [favicon]);
+  usePreviewDocument(setDoc);
+  const editorStyle = useEditorLayout(editing);
+  const p =
+    editing || preview
+      ? doc?.projects.find((v) => v.slug === publishedProject.slug) || published
+      : published;
+  useEffect(() => {
+    document.title = p.browserTitle || `${p.title} — ${name}`;
+  }, [p.browserTitle, p.title, name]);
+  useEffect(() => {
+    const guard = (e: BeforeUnloadEvent) => {
+      if (dirty) {
+        e.preventDefault();
+        e.returnValue = "";
+      }
+    };
+    window.addEventListener("beforeunload", guard);
+    return () => window.removeEventListener("beforeunload", guard);
+  }, [dirty]);
+  async function startEdit() {
+    setBusy(true);
+    try {
+      const r = await fetch("/api/document?draft=1");
+      if (r.status === 401) {
+        setLogin(true);
+        return;
+      }
+      if (!r.ok) throw Error("Не удалось открыть редактор");
+      const d = (await r.json()) as { document: Document; revision: number };
+      setDoc(normalizeDocument(d.document));
+      setRevision(d.revision);
+      setEditing(true);
+      setDirty(false);
+      setStatus("");
+    } catch (e) {
+      setStatus(e instanceof Error ? e.message : "Ошибка");
+    } finally {
+      setBusy(false);
+    }
+  }
+  useEffect(() => {
+    if (
+      !new URLSearchParams(location.search).has("preview") &&
+      new URLSearchParams(window.location.search).has("edit")
+    ) {
+      void startEdit(); /* Keep edit=1 so a draft-only page survives refresh. */
+    }
+  }, []);
+  async function save(action: "draft" | "publish") {
+    if (!doc) return;
+    setBusy(true);
+    try {
+      const r = await fetch("/api/document", {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ document: doc, revision, action }),
+      });
+      const d = (await r.json()) as { revision: number; error?: string };
+      if (!r.ok) throw Error(d.error || "Не удалось сохранить");
+      setRevision(d.revision);
+      setDirty(false);
+      if (action === "publish") setPublished(p);
+      setStatus(
+        action === "publish" ? "Проект опубликован" : "Черновик сохранён",
+      );
+    } catch (e) {
+      setStatus(e instanceof Error ? e.message : "Ошибка сохранения");
+    } finally {
+      setBusy(false);
+    }
+  }
+  async function removePage() {
+    if (
+      !doc ||
+      !window.confirm(
+        "Удалить эту страницу из черновика? Опубликуйте изменения на главной, чтобы убрать её с сайта.",
+      )
+    )
+      return;
+    setBusy(true);
+    try {
+      const slug = p.slug;
+      const next = {
+        ...doc,
+        projects: doc.projects
+          .filter((q) => q.slug !== slug)
+          .map((q) => ({
+            ...q,
+            children: q.children.filter((c) => c.slug !== slug),
+          })),
+        cards: doc.cards.map((c) => ({
+          ...c,
+          projectSlug: c.projectSlug === slug ? "" : c.projectSlug,
+          url: c.url === pagePath(p) ? "" : c.url,
+        })),
+      };
+      const r = await fetch("/api/document", {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ document: next, revision, action: "draft" }),
+      });
+      const data = await r.json();
+      if (!r.ok) throw Error(data.error);
+      setDirty(false);
+      window.setTimeout(() => window.location.assign("/?editProjects=1"), 0);
+    } catch (e) {
+      setStatus(e instanceof Error ? e.message : "Не удалось удалить");
+      setBusy(false);
+    }
+  }
+  function close() {
+    if (dirty && !window.confirm("Закрыть редактор без сохранения изменений?"))
+      return;
+    setEditing(false);
+    setDirty(false);
+    setPhone(false);
+  }
+  return (
+    <div
+      className={`site ${theme} project-site ${p.pageType === "html" ? "html-site" : ""} ${editing ? "project-editing" : ""} ${preview ? "is-preview" : ""} ${phone ? "device-mode" : ""}`}
+      style={
+        {
+          ...editorStyle,
+          "--accent": accent,
+          "--shell-background": p.shellBackground,
+          "--shell-color": p.shellColor,
+          "--footer-background": p.footerBackground,
+          "--footer-color": p.footerColor,
+        } as React.CSSProperties
+      }
+    >
+      <div className="ambient-background" aria-hidden="true">
+        <i />
+        <i />
+        <i />
+      </div>
+      <header className="topbar">
+        <a href="/" className="wordmark" aria-label="На главную">
+          <img className="ag-logo" src={logo} alt="AG" />
+        </a>
+        <span className="top-label">
+          {p.pageType === "html" ? p.title : "ИНЖЕНЕРИЯ / ПРОЕКТЫ"}
+        </span>
+        <div className="top-actions">
+          <button
+            className="icon-btn"
+            aria-label="Сменить тему"
+            onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+          >
+            {theme === "dark" ? <Sun size={18} /> : <Moon size={18} />}
+          </button>
+          <button
+            className="edit-button"
+            disabled={busy}
+            onClick={editing ? close : startEdit}
+          >
+            {editing ? "Закрыть редактор" : "Редактировать"}
+          </button>
+          <a href="/?section=links" className="edit-button">
+            На связи <ArrowUpRight size={15} />
+          </a>
+        </div>
+      </header>
+      {editing && doc && (
+        <aside className="project-page-editor">
+          <div className="project-editor-actions">
+            <button className="editor-close" disabled={busy} onClick={close}>
+              <X size={15} /> Выйти из редактора
+            </button>
+            <button onClick={() => setPhone(!phone)}>
+              {phone ? "Компьютер" : "Мобильный экран"}
+            </button>
+            <strong>{dirty ? "Есть изменения" : "Редактор проекта"}</strong>
+            <button disabled={busy} onClick={() => save("draft")}>
+              Сохранить
+            </button>
+            <button
+              className="primary"
+              disabled={busy}
+              onClick={() => save("publish")}
+            >
+              Опубликовать
+            </button>
+          </div>
+          <p role="status">{status}</p>
+          <fieldset disabled={busy}>
+            <ProjectEditor
+              initialSlug={publishedProject.slug}
+              doc={doc}
+              onChange={(d) => {
+                setDoc(d);
+                setDirty(true);
+              }}
+            />
+          </fieldset>
+          <button
+            className="danger delete-project"
+            disabled={busy}
+            onClick={removePage}
+          >
+            Удалить страницу
+          </button>
+          <button
+            className="logout-button"
+            onClick={async () => {
+              if (dirty && !window.confirm("Выйти без сохранения?")) return;
+              await fetch("/api/auth", { method: "DELETE" });
+              setDirty(false);
+              setEditing(false);
+              location.assign("/");
+            }}
+          >
+            Выйти из аккаунта
+          </button>
+        </aside>
+      )}
+      {!editing && status && <p role="status">{status}</p>}
+      <main hidden={phone && editing} className="project-main">
+        {p.pageType !== "html" && (
+          <a className="back-link" href="/?section=projects">
+            <ArrowLeft size={16} /> Все проекты
+          </a>
+        )}
+        {p.pageType === "html" ? (
+          <section className="html-project">
+            <iframe
+              title={p.title}
+              sandbox="allow-scripts"
+              referrerPolicy="no-referrer"
+              srcDoc={p.html}
+            />
+          </section>
+        ) : (
+          <>
+            <section
+              className={`project-hero ${p.image ? "" : "without-image"}`}
+            >
+              <div>
+                <div className="eyebrow">
+                  {p.kind}
+                  {p.year && " / " + p.year}
+                </div>
+                <h1>{p.title}</h1>
+                <p>{p.subtitle}</p>
+                <div className="project-actions">
+                  {p.links.slice(0, 1).map((l, i) => (
+                    <a className="primary" {...linkProps(l.url)} key={i}>
+                      {l.label}
+                      {/Скачать|Прошивка/.test(l.label) ? (
+                        <Download size={16} />
+                      ) : (
+                        <ArrowUpRight size={16} />
+                      )}
+                    </a>
+                  ))}
+                </div>
+              </div>
+              {p.image && (
+                <div
+                  className={`project-cover ${p.kind === "SOFTWARE" ? "software-cover" : ""}`}
+                >
+                  <img src={p.image} alt={p.title} />
+                  <span>
+                    {p.kind === "HARDWARE" ? "DESIGNED TO BE REAL" : p.kind}
+                  </span>
+                </div>
+              )}
+            </section>
+            <div className="project-body-grid">
+              <article className="project-story">
+                <span className="eyebrow">О ПРОЕКТЕ</span>
+                <Markdown value={p.body} />
+                {p.note && <div className="project-note">{p.note}</div>}
+              </article>
+              {(p.facts.length > 0 || p.links.length > 0) && (
+                <aside className="project-details">
+                  {p.facts.length > 0 && (
+                    <>
+                      <h2>Детали</h2>
+                      <dl>
+                        {p.facts.map((f, i) => (
+                          <div key={i}>
+                            <dt>{f.label}</dt>
+                            <dd>{f.url}</dd>
+                          </div>
+                        ))}
+                      </dl>
+                    </>
+                  )}
+                  {p.links.length > 0 && (
+                    <>
+                      <h2>Ссылки и файлы</h2>
+                      {p.links.map((l, i) => (
+                        <a key={i} {...linkProps(l.url)}>
+                          {l.label}
+                          <ArrowUpRight size={16} />
+                        </a>
+                      ))}
+                    </>
+                  )}
+                </aside>
+              )}
+            </div>
+            {p.children.length > 0 && (
+              <section className="project-versions">
+                <div className="section-title-line">
+                  <h2>{p.versionsTitle}</h2>
+                  <span>{String(p.children.length).padStart(2, "0")}</span>
+                </div>
+                <div className="version-grid">
+                  {p.children.map((c, i) => (
+                    <a
+                      key={c.slug}
+                      href={
+                        doc?.projects.find((p) => p.slug === c.slug)
+                          ? pagePath(
+                              doc.projects.find((p) => p.slug === c.slug)!,
+                            )
+                          : pagePaths[c.slug] || "/projects/" + c.slug
+                      }
+                    >
+                      <span>0{i + 1}</span>
+                      <h3>{c.title}</h3>
+                      <ArrowUpRight />
+                    </a>
+                  ))}
+                </div>
+              </section>
+            )}
+            {p.gallery.length > 0 && (
+              <section className="project-gallery">
+                <div className="section-title-line">
+                  <h2>Форма и детали</h2>
+                  <span>GALLERY</span>
+                </div>
+                <div>
+                  {p.gallery.map((src, i) => (
+                    <button
+                      key={src}
+                      onClick={() => setPhoto(src)}
+                      aria-label={`Открыть фото ${i + 1}`}
+                    >
+                      <img
+                        src={src}
+                        alt={`${p.title} — вид ${i + 1}`}
+                        loading="lazy"
+                      />
+                    </button>
+                  ))}
+                </div>
+              </section>
+            )}
+            {p.licenseText && (
+              <section className="license-text">
+                <h2>Текст лицензии</h2>
+                <pre>{p.licenseText}</pre>
+              </section>
+            )}
+          </>
+        )}
+        {p.pageType !== "html" && (
+          <section className="project-contact">
+            <span>ЕСТЬ ИДЕЯ?</span>
+            <a href="/?section=links">
+              Давайте соберём
+              <br />
+              что-нибудь интересное.
+              <ArrowUpRight />
+            </a>
+          </section>
+        )}
+        <footer>
+          <span>
+            © {new Date().getFullYear()} {copyrightText}
+          </span>
+          <span>{footerText}</span>
+          <a href="/?section=projects">К проектам ↑</a>
+        </footer>
+      </main>
+      {phone && editing && doc && (
+        <DevicePreview doc={doc} path={pagePath(p) + "?edit=1"} />
+      )}{" "}
+      {login && (
+        <LoginDialog
+          onClose={() => setLogin(false)}
+          onSuccess={async () => {
+            setLogin(false);
+            await startEdit();
+          }}
+        />
+      )}
+      {photo && (
+        <div
+          className="lightbox"
+          role="dialog"
+          aria-modal="true"
+          aria-label="Фотография проекта"
+          onClick={() => setPhoto(null)}
+        >
+          <button
+            autoFocus
+            className="close"
+            aria-label="Закрыть"
+            onClick={() => setPhoto(null)}
+            onKeyDown={(e) => {
+              if (e.key === "Escape") setPhoto(null);
+            }}
+          >
+            <X />
+          </button>
+          <img src={photo} alt={p.title} />
+        </div>
+      )}
+    </div>
+  );
 }
