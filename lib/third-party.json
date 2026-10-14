@@ -1,0 +1,667 @@
+[
+  {
+    "name": "@emnapi/runtime",
+    "version": "1.11.3",
+    "license": "Не установлен — см. лицензию пакета",
+    "development": false,
+    "optional": true
+  },
+  {
+    "name": "@img/colour",
+    "version": "1.1.0",
+    "license": "MIT",
+    "development": false,
+    "optional": true
+  },
+  {
+    "name": "@img/sharp-darwin-arm64",
+    "version": "0.35.5",
+    "license": "Не установлен — см. лицензию пакета",
+    "development": false,
+    "optional": true
+  },
+  {
+    "name": "@img/sharp-darwin-x64",
+    "version": "0.35.5",
+    "license": "Не установлен — см. лицензию пакета",
+    "development": false,
+    "optional": true
+  },
+  {
+    "name": "@img/sharp-freebsd-wasm32",
+    "version": "0.35.5",
+    "license": "Не установлен — см. лицензию пакета",
+    "development": false,
+    "optional": true
+  },
+  {
+    "name": "@img/sharp-libvips-darwin-arm64",
+    "version": "1.3.4",
+    "license": "Не установлен — см. лицензию пакета",
+    "development": false,
+    "optional": true
+  },
+  {
+    "name": "@img/sharp-libvips-darwin-x64",
+    "version": "1.3.4",
+    "license": "Не установлен — см. лицензию пакета",
+    "development": false,
+    "optional": true
+  },
+  {
+    "name": "@img/sharp-libvips-linux-arm",
+    "version": "1.3.4",
+    "license": "Не установлен — см. лицензию пакета",
+    "development": false,
+    "optional": true
+  },
+  {
+    "name": "@img/sharp-libvips-linux-arm64",
+    "version": "1.3.4",
+    "license": "Не установлен — см. лицензию пакета",
+    "development": false,
+    "optional": true
+  },
+  {
+    "name": "@img/sharp-libvips-linux-ppc64",
+    "version": "1.3.4",
+    "license": "Не установлен — см. лицензию пакета",
+    "development": false,
+    "optional": true
+  },
+  {
+    "name": "@img/sharp-libvips-linux-riscv64",
+    "version": "1.3.4",
+    "license": "Не установлен — см. лицензию пакета",
+    "development": false,
+    "optional": true
+  },
+  {
+    "name": "@img/sharp-libvips-linux-s390x",
+    "version": "1.3.4",
+    "license": "Не установлен — см. лицензию пакета",
+    "development": false,
+    "optional": true
+  },
+  {
+    "name": "@img/sharp-libvips-linux-x64",
+    "version": "1.3.4",
+    "license": "Не установлен — см. лицензию пакета",
+    "development": false,
+    "optional": true
+  },
+  {
+    "name": "@img/sharp-libvips-linuxmusl-arm64",
+    "version": "1.3.4",
+    "license": "Не установлен — см. лицензию пакета",
+    "development": false,
+    "optional": true
+  },
+  {
+    "name": "@img/sharp-libvips-linuxmusl-x64",
+    "version": "1.3.4",
+    "license": "Не установлен — см. лицензию пакета",
+    "development": false,
+    "optional": true
+  },
+  {
+    "name": "@img/sharp-linux-arm",
+    "version": "0.35.5",
+    "license": "Не установлен — см. лицензию пакета",
+    "development": false,
+    "optional": true
+  },
+  {
+    "name": "@img/sharp-linux-arm64",
+    "version": "0.35.5",
+    "license": "Не установлен — см. лицензию пакета",
+    "development": false,
+    "optional": true
+  },
+  {
+    "name": "@img/sharp-linux-ppc64",
+    "version": "0.35.5",
+    "license": "Не установлен — см. лицензию пакета",
+    "development": false,
+    "optional": true
+  },
+  {
+    "name": "@img/sharp-linux-riscv64",
+    "version": "0.35.5",
+    "license": "Не установлен — см. лицензию пакета",
+    "development": false,
+    "optional": true
+  },
+  {
+    "name": "@img/sharp-linux-s390x",
+    "version": "0.35.5",
+    "license": "Не установлен — см. лицензию пакета",
+    "development": false,
+    "optional": true
+  },
+  {
+    "name": "@img/sharp-linux-x64",
+    "version": "0.35.5",
+    "license": "Не установлен — см. лицензию пакета",
+    "development": false,
+    "optional": true
+  },
+  {
+    "name": "@img/sharp-linuxmusl-arm64",
+    "version": "0.35.5",
+    "license": "Не установлен — см. лицензию пакета",
+    "development": false,
+    "optional": true
+  },
+  {
+    "name": "@img/sharp-linuxmusl-x64",
+    "version": "0.35.5",
+    "license": "Не установлен — см. лицензию пакета",
+    "development": false,
+    "optional": true
+  },
+  {
+    "name": "@img/sharp-wasm32",
+    "version": "0.35.5",
+    "license": "Не установлен — см. лицензию пакета",
+    "development": false,
+    "optional": true
+  },
+  {
+    "name": "@img/sharp-webcontainers-wasm32",
+    "version": "0.35.5",
+    "license": "Не установлен — см. лицензию пакета",
+    "development": false,
+    "optional": true
+  },
+  {
+    "name": "@img/sharp-win32-arm64",
+    "version": "0.35.5",
+    "license": "Не установлен — см. лицензию пакета",
+    "development": false,
+    "optional": true
+  },
+  {
+    "name": "@img/sharp-win32-ia32",
+    "version": "0.35.5",
+    "license": "Не установлен — см. лицензию пакета",
+    "development": false,
+    "optional": true
+  },
+  {
+    "name": "@img/sharp-win32-x64",
+    "version": "0.35.5",
+    "license": "Не установлен — см. лицензию пакета",
+    "development": false,
+    "optional": true
+  },
+  {
+    "name": "@mapbox/jsonlint-lines-primitives",
+    "version": "2.0.3",
+    "license": "MIT",
+    "development": false,
+    "optional": false
+  },
+  {
+    "name": "@mapbox/point-geometry",
+    "version": "1.1.0",
+    "license": "ISC",
+    "development": false,
+    "optional": false
+  },
+  {
+    "name": "@mapbox/tiny-sdf",
+    "version": "2.3.0",
+    "license": "BSD-2-Clause",
+    "development": false,
+    "optional": false
+  },
+  {
+    "name": "@mapbox/unitbezier",
+    "version": "1.0.0",
+    "license": "BSD-2-Clause",
+    "development": false,
+    "optional": false
+  },
+  {
+    "name": "@mapbox/vector-tile",
+    "version": "3.0.0",
+    "license": "BSD-3-Clause",
+    "development": false,
+    "optional": false
+  },
+  {
+    "name": "@maplibre/geojson-vt",
+    "version": "6.1.2",
+    "license": "ISC",
+    "development": false,
+    "optional": false
+  },
+  {
+    "name": "@maplibre/maplibre-gl-style-spec",
+    "version": "26.4.4",
+    "license": "ISC",
+    "development": false,
+    "optional": false
+  },
+  {
+    "name": "@maplibre/mlt",
+    "version": "1.3.0",
+    "license": "(MIT OR Apache-2.0)",
+    "development": false,
+    "optional": false
+  },
+  {
+    "name": "@maplibre/vt-pbf",
+    "version": "4.3.2",
+    "license": "MIT",
+    "development": false,
+    "optional": false
+  },
+  {
+    "name": "@mixmark-io/domino",
+    "version": "2.2.0",
+    "license": "BSD-2-Clause",
+    "development": false,
+    "optional": false
+  },
+  {
+    "name": "@next/env",
+    "version": "16.3.8",
+    "license": "MIT",
+    "development": false,
+    "optional": false
+  },
+  {
+    "name": "@next/swc-darwin-arm64",
+    "version": "16.3.8",
+    "license": "Не установлен — см. лицензию пакета",
+    "development": false,
+    "optional": true
+  },
+  {
+    "name": "@next/swc-darwin-x64",
+    "version": "16.3.8",
+    "license": "Не установлен — см. лицензию пакета",
+    "development": false,
+    "optional": true
+  },
+  {
+    "name": "@next/swc-linux-arm64-gnu",
+    "version": "16.3.8",
+    "license": "Не установлен — см. лицензию пакета",
+    "development": false,
+    "optional": true
+  },
+  {
+    "name": "@next/swc-linux-arm64-musl",
+    "version": "16.3.8",
+    "license": "Не установлен — см. лицензию пакета",
+    "development": false,
+    "optional": true
+  },
+  {
+    "name": "@next/swc-linux-x64-gnu",
+    "version": "16.3.8",
+    "license": "Не установлен — см. лицензию пакета",
+    "development": false,
+    "optional": true
+  },
+  {
+    "name": "@next/swc-linux-x64-musl",
+    "version": "16.3.8",
+    "license": "Не установлен — см. лицензию пакета",
+    "development": false,
+    "optional": true
+  },
+  {
+    "name": "@next/swc-win32-arm64-msvc",
+    "version": "16.3.8",
+    "license": "Не установлен — см. лицензию пакета",
+    "development": false,
+    "optional": true
+  },
+  {
+    "name": "@next/swc-win32-x64-msvc",
+    "version": "16.3.8",
+    "license": "Не установлен — см. лицензию пакета",
+    "development": false,
+    "optional": true
+  },
+  {
+    "name": "@swc/helpers",
+    "version": "0.5.23",
+    "license": "Apache-2.0",
+    "development": false,
+    "optional": false
+  },
+  {
+    "name": "@types/geojson",
+    "version": "7946.0.16",
+    "license": "MIT",
+    "development": false,
+    "optional": false
+  },
+  {
+    "name": "@types/node",
+    "version": "22.19.19",
+    "license": "MIT",
+    "development": true,
+    "optional": false
+  },
+  {
+    "name": "@types/react",
+    "version": "19.2.14",
+    "license": "MIT",
+    "development": true,
+    "optional": false
+  },
+  {
+    "name": "@types/react-dom",
+    "version": "19.2.3",
+    "license": "MIT",
+    "development": true,
+    "optional": false
+  },
+  {
+    "name": "@types/trusted-types",
+    "version": "2.0.7",
+    "license": "Не установлен — см. лицензию пакета",
+    "development": false,
+    "optional": true
+  },
+  {
+    "name": "@types/turndown",
+    "version": "5.0.6",
+    "license": "MIT",
+    "development": true,
+    "optional": false
+  },
+  {
+    "name": "baseline-browser-mapping",
+    "version": "2.11.28",
+    "license": "Apache-2.0",
+    "development": false,
+    "optional": false
+  },
+  {
+    "name": "bidi-js",
+    "version": "1.1.0",
+    "license": "MIT",
+    "development": false,
+    "optional": false
+  },
+  {
+    "name": "caniuse-lite",
+    "version": "1.0.30001816",
+    "license": "CC-BY-4.0",
+    "development": false,
+    "optional": false
+  },
+  {
+    "name": "client-only",
+    "version": "0.0.1",
+    "license": "MIT",
+    "development": false,
+    "optional": false
+  },
+  {
+    "name": "csstype",
+    "version": "3.2.3",
+    "license": "MIT",
+    "development": true,
+    "optional": false
+  },
+  {
+    "name": "detect-libc",
+    "version": "2.1.2",
+    "license": "Apache-2.0",
+    "development": false,
+    "optional": true
+  },
+  {
+    "name": "dompurify",
+    "version": "3.4.16",
+    "license": "(MPL-2.0 OR Apache-2.0)",
+    "development": false,
+    "optional": false
+  },
+  {
+    "name": "earcut",
+    "version": "3.2.4",
+    "license": "ISC",
+    "development": false,
+    "optional": false
+  },
+  {
+    "name": "gl-matrix",
+    "version": "3.4.4",
+    "license": "MIT",
+    "development": false,
+    "optional": false
+  },
+  {
+    "name": "json-stringify-pretty-compact",
+    "version": "4.0.0",
+    "license": "MIT",
+    "development": false,
+    "optional": false
+  },
+  {
+    "name": "kdbush",
+    "version": "4.1.0",
+    "license": "ISC",
+    "development": false,
+    "optional": false
+  },
+  {
+    "name": "lucide-react",
+    "version": "1.31.0",
+    "license": "ISC",
+    "development": false,
+    "optional": false
+  },
+  {
+    "name": "maplibre-gl",
+    "version": "6.13.0",
+    "license": "BSD-3-Clause",
+    "development": false,
+    "optional": false
+  },
+  {
+    "name": "marked",
+    "version": "18.1.0",
+    "license": "MIT",
+    "development": false,
+    "optional": false
+  },
+  {
+    "name": "minimist",
+    "version": "1.2.8",
+    "license": "MIT",
+    "development": false,
+    "optional": false
+  },
+  {
+    "name": "murmurhash-js",
+    "version": "1.0.0",
+    "license": "MIT",
+    "development": false,
+    "optional": false
+  },
+  {
+    "name": "nanoid",
+    "version": "3.3.18",
+    "license": "MIT",
+    "development": false,
+    "optional": false
+  },
+  {
+    "name": "next",
+    "version": "16.3.8",
+    "license": "MIT",
+    "development": false,
+    "optional": false
+  },
+  {
+    "name": "pbf",
+    "version": "5.1.2",
+    "license": "BSD-3-Clause",
+    "development": false,
+    "optional": false
+  },
+  {
+    "name": "picocolors",
+    "version": "1.1.1",
+    "license": "ISC",
+    "development": false,
+    "optional": false
+  },
+  {
+    "name": "postcss",
+    "version": "8.5.23",
+    "license": "MIT",
+    "development": false,
+    "optional": false
+  },
+  {
+    "name": "potpack",
+    "version": "2.1.0",
+    "license": "ISC",
+    "development": false,
+    "optional": false
+  },
+  {
+    "name": "prettier",
+    "version": "3.9.10",
+    "license": "MIT",
+    "development": true,
+    "optional": false
+  },
+  {
+    "name": "protocol-buffers-schema",
+    "version": "3.6.1",
+    "license": "MIT",
+    "development": false,
+    "optional": false
+  },
+  {
+    "name": "quickselect",
+    "version": "3.0.0",
+    "license": "ISC",
+    "development": false,
+    "optional": false
+  },
+  {
+    "name": "react",
+    "version": "19.2.6",
+    "license": "MIT",
+    "development": false,
+    "optional": false
+  },
+  {
+    "name": "react-dom",
+    "version": "19.2.6",
+    "license": "MIT",
+    "development": false,
+    "optional": false
+  },
+  {
+    "name": "require-from-string",
+    "version": "2.0.2",
+    "license": "MIT",
+    "development": false,
+    "optional": false
+  },
+  {
+    "name": "resolve-protobuf-schema",
+    "version": "2.1.0",
+    "license": "MIT",
+    "development": false,
+    "optional": false
+  },
+  {
+    "name": "scheduler",
+    "version": "0.27.0",
+    "license": "MIT",
+    "development": false,
+    "optional": false
+  },
+  {
+    "name": "semver",
+    "version": "7.8.5",
+    "license": "ISC",
+    "development": false,
+    "optional": true
+  },
+  {
+    "name": "sharp",
+    "version": "0.35.5",
+    "license": "Не установлен — см. лицензию пакета",
+    "development": false,
+    "optional": true
+  },
+  {
+    "name": "source-map-js",
+    "version": "1.2.2",
+    "license": "BSD-3-Clause",
+    "development": false,
+    "optional": false
+  },
+  {
+    "name": "styled-jsx",
+    "version": "5.1.6",
+    "license": "MIT",
+    "development": false,
+    "optional": false
+  },
+  {
+    "name": "tinyqueue",
+    "version": "3.0.0",
+    "license": "ISC",
+    "development": false,
+    "optional": false
+  },
+  {
+    "name": "tslib",
+    "version": "2.8.1",
+    "license": "0BSD",
+    "development": false,
+    "optional": false
+  },
+  {
+    "name": "turndown",
+    "version": "7.2.4",
+    "license": "MIT",
+    "development": false,
+    "optional": false
+  },
+  {
+    "name": "turndown-plugin-gfm",
+    "version": "1.0.2",
+    "license": "MIT",
+    "development": false,
+    "optional": false
+  },
+  {
+    "name": "typescript",
+    "version": "5.9.3",
+    "license": "Apache-2.0",
+    "development": true,
+    "optional": false
+  },
+  {
+    "name": "undici-types",
+    "version": "6.21.0",
+    "license": "MIT",
+    "development": true,
+    "optional": false
+  },
+  {
+    "name": "zod",
+    "version": "3.25.76",
+    "license": "MIT",
+    "development": false,
+    "optional": false
+  }
+]

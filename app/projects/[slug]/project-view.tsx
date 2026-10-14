@@ -1,4 +1,5 @@
 "use client";
+import OpenSourceLinks from "../../open-source-links";
 import { useState, useEffect } from "react";
 import { useTheme } from "../../use-theme";
 import { LoginDialog } from "../../login-form";
@@ -436,6 +437,7 @@ export default function ProjectView({
             © {new Date().getFullYear()} {copyrightText}
           </span>
           <span>{footerText}</span>
+          <OpenSourceLinks />
           <a href="/?section=projects">К проектам ↑</a>
         </footer>
       </main>

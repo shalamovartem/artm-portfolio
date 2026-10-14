@@ -28,6 +28,9 @@ export const reservedSlugs = [
   "projects",
   "media",
   "license",
+  "licenses",
+  "legal",
+  "icons",
   "_next",
   "favicon",
   "robots",
@@ -207,57 +210,79 @@ export type Project = Document["projects"][number];
 export function normalizeDocument(value: unknown): Document {
   const d = value as Record<string, unknown>;
   const old = !Array.isArray(d.sections);
-  const cards = (d.cards as Array<Record<string, unknown>>).map((c, i) => {
-    let category = String(c.category);
-    if (category === "experience")
-      category = String(c.id).startsWith("card-1770423092420")
-        ? "education"
-        : "career";
-    if (category === "about") category = "home";
-    const slugs: Record<string, string> = {
-      sphinix: "sphinix",
-      lamp: "aglamp",
-      button: "agbutton",
-      write: "agwrite",
-      license: "aglicense",
-      cloud: "sphinixcloud",
-      servers: "sphinixservers",
-      services: "sphinixservices",
-    };
-    const projectSlug = String(c.projectSlug ?? slugs[String(c.id)] ?? "");
-    let result: Record<string, unknown> = {
-      ...c,
-      icon:
-        c.icon ??
-        (
-          {
-            telegram: "send",
-            channel: "send",
-            mail: "mail",
-            github: "code",
-            cad: "diamond",
-          } as Record<string, string>
-        )[String(c.id)] ??
-        (c.type === "link" ? "arrow" : "none"),
-      category,
-      home: c.home ?? i < 12,
-      projectSlug,
-    };
-    if (old && projectSlug)
-      result = { ...result, url: "/projects/" + projectSlug, type: "project" };
-    if (old && c.title === "ЦНТТ RoboGrade")
-      result = { ...result, text: "Директор по операционной деятельности" };
-    if (old && c.id === "about" && String(c.title).startsWith("Между кодом"))
-      result = {
-        ...result,
-        title: "От идеи\nдо настоящей вещи.",
-        text: "Конструирую, собираю, испытываю. CAD, электроника, робототехника — и немного кода, чтобы всё это ожило.",
+  // Retire the two legacy license pages without changing other authored pages.
+  const retired = new Set(["aglicense", "aglicense-f1"]);
+  const projects = (
+    (d.projects ?? defaultProjects) as Array<Record<string, unknown>>
+  )
+    .filter((p) => !retired.has(String(p.slug)))
+    .map((p) => ({
+      ...p,
+      children: ((p.children as Array<{ slug: string }>) ?? []).filter(
+        (c) => !retired.has(c.slug),
+      ),
+    }));
+  const cards = (d.cards as Array<Record<string, unknown>>)
+    .filter(
+      (c) =>
+        c.id !== "license" &&
+        !retired.has(String(c.projectSlug)) &&
+        !String(c.url ?? "").includes("/aglicense"),
+    )
+    .map((c, i) => {
+      let category = String(c.category);
+      if (category === "experience")
+        category = String(c.id).startsWith("card-1770423092420")
+          ? "education"
+          : "career";
+      if (category === "about") category = "home";
+      const slugs: Record<string, string> = {
+        sphinix: "sphinix",
+        lamp: "aglamp",
+        button: "agbutton",
+        write: "agwrite",
+        cloud: "sphinixcloud",
+        servers: "sphinixservers",
+        services: "sphinixservices",
       };
-    if (old && c.id === "location")
-      result = { ...result, size: "wide", url: "" };
-    if (old && c.id === "pixel") result = { ...result, category: "photos" };
-    return result;
-  });
+      const projectSlug = String(c.projectSlug ?? slugs[String(c.id)] ?? "");
+      let result: Record<string, unknown> = {
+        ...c,
+        icon:
+          c.icon ??
+          (
+            {
+              telegram: "send",
+              channel: "send",
+              mail: "mail",
+              github: "code",
+              cad: "diamond",
+            } as Record<string, string>
+          )[String(c.id)] ??
+          (c.type === "link" ? "arrow" : "none"),
+        category,
+        home: c.home ?? i < 12,
+        projectSlug,
+      };
+      if (old && projectSlug)
+        result = {
+          ...result,
+          url: "/projects/" + projectSlug,
+          type: "project",
+        };
+      if (old && c.title === "ЦНТТ RoboGrade")
+        result = { ...result, text: "Директор по операционной деятельности" };
+      if (old && c.id === "about" && String(c.title).startsWith("Между кодом"))
+        result = {
+          ...result,
+          title: "От идеи\nдо настоящей вещи.",
+          text: "Конструирую, собираю, испытываю. CAD, электроника, робототехника — и немного кода, чтобы всё это ожило.",
+        };
+      if (old && c.id === "location")
+        result = { ...result, size: "wide", url: "" };
+      if (old && c.id === "pixel") result = { ...result, category: "photos" };
+      return result;
+    });
   if (old) {
     const order = [
       "about",
@@ -295,7 +320,7 @@ export function normalizeDocument(value: unknown): Document {
         "Проекты, заметки и то, чем хочется поделиться.",
       eyebrow: s.eyebrow ?? "0" + (i + 2) + " / COLLECTION",
     })),
-    projects: d.projects ?? defaultProjects,
+    projects,
     cards,
   });
 }

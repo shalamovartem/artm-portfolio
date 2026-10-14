@@ -1,4 +1,5 @@
 "use client";
+import OpenSourceLinks from "./open-source-links";
 import { useEffect, useLayoutEffect, useState, useRef } from "react";
 import {
   ArrowUpRight,
@@ -991,6 +992,7 @@ export default function Portfolio({
               © {new Date().getFullYear()} {doc.copyrightText}
             </span>
             <span>{doc.footerText}</span>
+            <OpenSourceLinks />
             <button
               onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
               aria-label="Наверх"

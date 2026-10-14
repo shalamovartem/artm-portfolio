@@ -238,59 +238,6 @@
     "licenseText": ""
   },
   {
-    "slug": "aglicense",
-    "title": "AGLicense",
-    "subtitle": "Лицензии для проектов.",
-    "body": "Сборник лицензий, которые можно использовать в своих проектах. Здесь есть собственная AGLicense F1, а также ссылки на MIT и GNU GPLv3.\n\nДля AGLicense F1 сохранены оригинальные тексты на русском и английском языках.",
-    "year": "2021",
-    "kind": "DOCUMENTS",
-    "image": "",
-    "facts": [],
-    "links": [
-      {
-        "label": "MIT License",
-        "url": "https://mit-license.org/"
-      },
-      {
-        "label": "GNU GPLv3",
-        "url": "https://www.gnu.org/licenses/gpl-3.0.html"
-      }
-    ],
-    "children": [
-      {
-        "title": "AGLicense F1",
-        "slug": "aglicense-f1"
-      }
-    ],
-    "gallery": [],
-    "note": "",
-    "licenseText": ""
-  },
-  {
-    "slug": "aglicense-f1",
-    "title": "AGLicense F1",
-    "subtitle": "Оригинальный текст лицензии.",
-    "body": "На исходной странице перечислены использование в личных целях, копирование, редактирование, слияние и распространение. Для продажи указано условие согласия владельца авторского права.\n\nЛицензия создана с использованием MIT License. Текст ниже перенесён без смысловых правок; русский и английский варианты сохранены.",
-    "year": "",
-    "kind": "DOCUMENTS",
-    "image": "",
-    "facts": [],
-    "links": [
-      {
-        "label": "Открыть текст без оформления",
-        "url": "/license/aglicense-f1.txt"
-      },
-      {
-        "label": "MIT License",
-        "url": "https://mit-license.org/"
-      }
-    ],
-    "children": [],
-    "gallery": [],
-    "note": "",
-    "licenseText": "en:\nThis license allows persons who have received a copy of the data files and\nrelated documentation (collectively \"Files\"), free of charge\nuse Files without restrictions, including the unlimited right to\nuse, copy, modify, merge, publish and distribute\ncopies of Files, as well as those who receive the Files at\nthe following terms and conditions:\n\nThe above copyright notice and these terms must be\nincluded in all copies or significant parts of these Files.\n\nTHESE FILES ARE PROVIDED \"AS IS\", WITHOUT ANY GUARANTEES, EXPLICITLY EXPRESSED\nOR IMPLIED, INCLUDING WARRANTIES OF MERCHANTABILITY, COMPLIANCE WITH ITS\nA SPECIFIC PURPOSE AND THE ABSENCE OF VIOLATIONS, BUT NOT LIMITED TO THEM. IN\nNO CASE, THE AUTHORS OR COPYRIGHT HOLDERS ARE NOT RESPONSIBLE FOR ANY\nCLAIMS, FOR DAMAGES OR FOR OTHER CLAIMS, INCLUDING WHEN THE CONTRACT IS VALID,\nA TORT OR OTHER SITUATION ARISING FROM THE USE OF FILES OR OTHER\nACTIONS WITH FILES.\n\n\n\nru:\nДанная лицензия разрешает лицам, получившим копию данных файлов и \nсопутствующей документации (в дальнейшем именуемыми «Файлы»), безвозмездно \nиспользовать Файлы без ограничений, включая неограниченное право на \nиспользование, копирование, изменение, слияние, публикацию и распространение \nкопий Файлов, а также лицам, которым предоставляется данные Файлы, при \nсоблюдении следующих условий:\n\nУказанное выше уведомление об авторском праве и данные условия должны быть \nвключены во все копии или значимые части данных Файлов.\n\nДАННЫЕ ФАЙЛЫ ПРЕДОСТАВЛЯЮТСЯ «КАК ЕСТЬ», БЕЗ КАКИХ-ЛИБО ГАРАНТИЙ, ЯВНО ВЫРАЖЕННЫХ \nИЛИ ПОДРАЗУМЕВАЕМЫХ, ВКЛЮЧАЯ ГАРАНТИИ ТОВАРНОЙ ПРИГОДНОСТИ, СООТВЕТСТВИЯ ПО ЕГО \nКОНКРЕТНОМУ НАЗНАЧЕНИЮ И ОТСУТСТВИЯ НАРУШЕНИЙ, НО НЕ ОГРАНИЧИВАЯСЬ ИМИ. НИ В \nКАКОМ СЛУЧАЕ АВТОРЫ ИЛИ ПРАВООБЛАДАТЕЛИ НЕ НЕСУТ ОТВЕТСТВЕННОСТИ ПО КАКИМ-ЛИБО \nИСКАМ, ЗА УЩЕРБ ИЛИ ПО ИНЫМ ТРЕБОВАНИЯМ, В ТОМ ЧИСЛЕ, ПРИ ДЕЙСТВИИ КОНТРАКТА, \nДЕЛИКТЕ ИЛИ ИНОЙ СИТУАЦИИ, ВОЗНИКШИМ ИЗ-ЗА ИСПОЛЬЗОВАНИЯ ФАЙЛОВ ИЛИ ИНЫХ \nДЕЙСТВИЙ С ФАЙЛАМИ.\n\n"
-  },
-  {
     "slug": "sphinix",
     "title": "Sphinix",
     "subtitle": "Группа проектов и команда разработчиков.",

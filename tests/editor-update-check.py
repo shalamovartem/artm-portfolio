@@ -62,6 +62,12 @@ def run():
             assert request('/api/auth', {'username': username, 'password': password}, 'POST')[0] == 200
             state = json.loads(request('/api/document?draft=1')[1])
             doc, revision = state['document'], state['revision']
+            status, licenses = request('/licenses')
+            assert status == 200 and 'GNU GPL v3' in licenses and 'OpenFreeMap' in licenses
+            assert request('/legal/GPL-3.0.txt')[0] == 200
+            assert request('/legal/THIRD-PARTY-NOTICES.txt')[0] == 200
+            assert all(not p['slug'].startswith('aglicense') for p in doc['projects'])
+            assert request('/projects/aglicense')[0] == 404
             assert all('latitude' in card and 'icon' in card for card in doc['cards'])
             assert all('description' in section for section in doc['sections'])
             doc['cards'][0].update(url='/?section=photos', icon='vk')

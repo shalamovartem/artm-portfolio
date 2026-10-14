@@ -13,7 +13,8 @@
     "format": "prettier --write app lib scripts *.json *.mjs *.cjs README.md deploy/*.md",
     "format:check": "prettier --check app lib scripts *.json *.mjs *.cjs README.md deploy/*.md",
     "typecheck": "tsc --noEmit",
-    "test:integration": "python3 tests/editor-update-check.py"
+    "test:integration": "python3 tests/editor-update-check.py",
+    "licenses": "node scripts/generate-licenses.mjs"
   },
   "dependencies": {
     "dompurify": "^3.4.16",
@@ -35,5 +36,6 @@
     "prettier": "^3.9.10",
     "typescript": "5.9.3"
   },
-  "type": "module"
+  "type": "module",
+  "license": "GPL-3.0-only"
 }

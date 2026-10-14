@@ -8,7 +8,7 @@ app
   .then(() =>
     http
       .createServer(app.getRequestHandler())
-      .listen(process.env.PORT || 3000, () =>
+      .listen(process.env.PORT || 3000, process.env.HOST, () =>
         console.log("Portfolio server ready"),
       ),
   )
